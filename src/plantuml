@@ -1,0 +1,56 @@
+@startuml
+
+title Toolshop
+
+abstract class Tool
+{
+    - ToolCategory cat
+}
+
+Tool -> "1" ToolCategory: strategy
+
+abstract class ToolCategory
+{
+    +int getBasePrice()
+}
+
+class Painting
+class Concrete
+class Plumbing
+class Woodwork
+class Yardwork
+
+ToolCategory <|-down- Painting
+ToolCategory <|-down- Concrete
+ToolCategory <|-down- Plumbing
+ToolCategory <|-down- Woodwork
+ToolCategory <|-down- Yardwork
+
+abstract class Purchasable
+{
+    -int cost
+    -int timeOfRental
+}
+
+Purchasable <|-down- Tool
+
+abstract class PurchaseDecorator
+{
+    - Purchase p
+}
+
+Purchasable <|-down- PurchaseDecorator
+
+note right of PurchaseDecorator
+decorator
+end note
+
+class ExtensionCord
+class ProtectiveGearPackage
+
+PurchaseDecorator <|-down- ExtensionCord
+PurchaseDecorator <|-down- ProtectiveGearPackage
+
+PurchaseDecorator -> Purchasable: component
+
+@enduml
