@@ -2,23 +2,78 @@
 
 title Toolshop
 
-abstract class Tool
+
+class ToolshopInventory
 {
-    - ToolCategory cat
+    -List[Tool] inventory
+    -ToolshopInventory()
+    +{static} ToolshopInventory getInstance()
+    +Tool checkoutTool()
+    +returnTool(Tool)
+}    
+Tool "24" -right-o ToolshopInventory
+
+class RentalRecord
+{
+    -Customer renter
+    -List[Purchasable] toolsRented
+    +RentalRecord()
+    +List[Purchasable] getTools()
 }
 
-Tool -> "1" ToolCategory: strategy
+Store "1" *-- "*" RentalRecord
+RentalRecord "1" o-- "1" Customer
+
+class Store
+{
+    -{static} Store instance
+    -Store()
+    -ToolshopInventory inventory
+    -List[RentalRecord] rentalRecords
+    +{static} Store getInstance()
+}
+
+Store "1" *-- "1" ToolshopInventory
+
+
+
+abstract class Tool
+{
+    #ToolCategory cat
+    +Tool()
+    +setCategory(ToolCategory)
+    +int getPrice()
+}
 
 abstract class ToolCategory
 {
+    #int basePrice
+    +ToolCategory(int)
     +int getBasePrice()
 }
 
+Tool -right- "1" ToolCategory: strategy
+
 class Painting
+{
+    +Painting()
+}
 class Concrete
+{
+    +Concrete()
+}
 class Plumbing
+{
+    +Plumbing()
+}
 class Woodwork
+{
+    +Woodwork()
+}
 class Yardwork
+{
+    +Yardwork()
+}
 
 ToolCategory <|-down- Painting
 ToolCategory <|-down- Concrete
@@ -28,29 +83,42 @@ ToolCategory <|-down- Yardwork
 
 abstract class Purchasable
 {
-    -int cost
-    -int timeOfRental
+    #int cost
+    #int timeOfRental
+    +int getPrice()
 }
 
 Purchasable <|-down- Tool
 
 abstract class PurchaseDecorator
 {
-    - Purchase p
+    +int getPrice()
 }
 
 Purchasable <|-down- PurchaseDecorator
 
-note right of PurchaseDecorator
-decorator
-end note
-
 class ExtensionCord
+class AccessoryKit
 class ProtectiveGearPackage
 
 PurchaseDecorator <|-down- ExtensionCord
+PurchaseDecorator <|-down- AccessoryKit
 PurchaseDecorator <|-down- ProtectiveGearPackage
 
-PurchaseDecorator -> Purchasable: component
+PurchaseDecorator -- Purchasable: component
+
+abstract class Customer
+{
+    #String name
+    +{abstract} rentTools()
+}
+class CasualCustomer
+class BusinessCustomer
+class RegularCustomer
+
+Customer <|-down- CasualCustomer
+Customer <|-down- BusinessCustomer
+Customer <|-down- RegularCustomer
+
 
 @enduml
