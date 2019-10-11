@@ -7,3 +7,4 @@
 - Decorator (for adding extra packages and handling costs of tools)
 - Strategy (for deciding which category a tool is in)
 - Template (for the different types of customers)
+- Singleton (the store)
