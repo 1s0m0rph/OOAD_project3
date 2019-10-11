@@ -31,6 +31,7 @@ class Store
     -ToolshopInventory inventory
     -List[RentalRecord] rentalRecords
     +{static} Store getInstance()
+    + update()
 }
 
 Store "1" *-- "1" ToolshopInventory
@@ -120,7 +121,7 @@ Customer <|-down- CasualCustomer
 Customer <|-down- BusinessCustomer
 Customer <|-down- RegularCustomer
 
-abstract class Observable <<interface>>
+abstract class Observable
 {
     + registerObserver()
     + removeObserver()
@@ -133,7 +134,6 @@ Observable <|-down- Customer
 abstract class Observer <<interface>>
 {
     + update()
-    + subscribe()
 }
 
 Observer <|-down- Store
