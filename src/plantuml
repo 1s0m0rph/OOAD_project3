@@ -120,5 +120,44 @@ Customer <|-down- CasualCustomer
 Customer <|-down- BusinessCustomer
 Customer <|-down- RegularCustomer
 
+abstract class Observable <<interface>>
+{
+    + registerObserver()
+    + removeObserver()
+    + notifyObservers()
+    - List[Observer] observers
+}
+
+Observable <|-down- Customer
+
+abstract class Observer <<interface>>
+{
+    + update()
+    + subscribe()
+}
+
+Observer <|-down- Store
+
+Observable --> "*" Observer: observers
+
+class CustomerPool
+{
+    - CustomerPool()
+    + getInstance()
+
+    - List[Customer] customers
+    + getCustomerPurchase()
+    + getCustomerReturn()
+}
+
+class Main
+{
+    + main()
+}
+
+CustomerPool o-- "12" Customer
+Main -- "1" CustomerPool
+Main --> Customer
+
 
 @enduml
