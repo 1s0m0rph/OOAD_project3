@@ -1,3 +1,4 @@
+import java.rmi.NoSuchObjectException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.HashMap;
@@ -13,7 +14,7 @@ public class ToolShopInventory implements ObjectPool
 	private HashMap<String,LinkedList<Tool>> inventory;//we want to seperate the tools by type and index by a type string
 	private int numToolsCurrentlyInInventory;
 	private static ToolShopInventory instance = new ToolShopInventory(getInitialToolCounts());
-	private boolean isShutdown = false;
+	private static boolean isShutdown = false;
 	
 	private static HashMap<String,Integer> getInitialToolCounts()
 	{
@@ -59,27 +60,40 @@ public class ToolShopInventory implements ObjectPool
 	
 	public static ToolShopInventory getInstance()
 	{
+		if(isShutdown)
+			throw new IllegalArgumentException("ToolShopInventory has been shut down!");
 		return instance;
 	}
 	
 	@Override
 	public Object get(String type)
 	{
-		Tool ret = inventory.get(type).removeFirst();//get the first tool in the queue of the correct type
-		numToolsCurrentlyInInventory--;
+		if(isShutdown)
+			throw new IllegalArgumentException("ToolShopInventory has been shut down!");
+		Tool ret = null;//it's possible there's no tool left in this category
+		if(inventory.get(type).size() > 0)
+		{
+			ret = inventory.get(type).removeFirst();//get the first tool in the queue of the correct type
+			numToolsCurrentlyInInventory--;
+		}
 		return ret;
 	}
 	
 	@Override
 	public void release(Object obj)
 	{
-		String type = ((Tool) obj).category.getCategory();//now we have the type of tool, add it to the correct queue in the hashmap
+		if(isShutdown)
+			throw new IllegalArgumentException("ToolShopInventory has been shut down!");
+		String type = ((Tool) obj).category.getCategoryName();//now we have the type of tool, add it to the correct queue in the hashmap
 		inventory.get(type).add((Tool) obj);
+		numToolsCurrentlyInInventory++;
 	}
 	
 	@Override
 	public void shutdown()
 	{
+		if(isShutdown)
+			throw new IllegalArgumentException("ToolShopInventory has been shut down!");
 		Set keys = inventory.keySet();
 		Iterator keyit = keys.iterator();
 		while(keyit.hasNext())
@@ -89,5 +103,12 @@ public class ToolShopInventory implements ObjectPool
 		}
 		inventory.clear();
 		isShutdown = true;
+	}
+	
+	public int getNumToolsCurrentlyInInventory()
+	{
+		if(isShutdown)
+			throw new IllegalArgumentException("ToolShopInventory has been shut down!");
+		return numToolsCurrentlyInInventory;
 	}
 }

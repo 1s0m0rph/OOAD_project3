@@ -6,4 +6,9 @@ public class Tool extends Purchasable
 	{
 		this.category = category;
 	}
+	
+	ToolCategory getCategory()
+	{
+		return category;
+	}
 }
