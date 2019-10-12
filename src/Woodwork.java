@@ -2,6 +2,6 @@ public class Woodwork extends ToolCategory
 {
 	public Woodwork()
 	{
-		super("woodwork");
+		super("woodwork",25);
 	}
 }

@@ -2,17 +2,17 @@ public class SimpleToolFactory
 {
 	public Tool createTool(String type)
 	{
-		Tool ret = new Tool();
+		Tool ret = null;
 		if(type.equalsIgnoreCase("concrete"))
-			ret.setCategory(new Concrete());
+			ret = new Tool(new Concrete());
 		else if(type.equalsIgnoreCase("painting"))
-			ret.setCategory(new Painting());
+			ret = new Tool(new Painting());
 		else if(type.equalsIgnoreCase("plumbing"))
-			ret.setCategory(new Plumbing());
+			ret = new Tool(new Plumbing());
 		else if(type.equalsIgnoreCase("woodwork"))
-			ret.setCategory(new Woodwork());
+			ret = new Tool(new Woodwork());
 		else if(type.equalsIgnoreCase("yardwork"))
-			ret.setCategory(new Yardwork());
+			ret = new Tool(new Yardwork());
 		else
 			throw new IllegalArgumentException(type + " is not a valid tool type");
 		

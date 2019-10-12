@@ -2,6 +2,6 @@ public class Plumbing extends ToolCategory
 {
 	public Plumbing()
 	{
-		super("plumbing");
+		super("plumbing",30);
 	}
 }

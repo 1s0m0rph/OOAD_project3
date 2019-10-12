@@ -2,6 +2,13 @@
 
 title Toolshop
 
+abstract class ObjectPool <<interface>>
+{
+    + get(string)
+    + get()
+    + release()
+    + shutdown()
+}
 
 class ToolshopInventory
 {
@@ -10,8 +17,11 @@ class ToolshopInventory
     +{static} ToolshopInventory getInstance()
     +Tool checkoutTool()
     +returnTool(Tool)
-}    
+}
 Tool "24" -right-o ToolshopInventory
+
+ObjectPool <|-down- ToolshopInventory
+ObjectPool <|-down- CustomerPool
 
 class RentalRecord
 {
@@ -38,7 +48,7 @@ Store "1" *-- "1" ToolshopInventory
 
 
 
-abstract class Tool
+class Tool
 {
     #ToolCategory cat
     +Tool()
@@ -84,9 +94,9 @@ ToolCategory <|-down- Yardwork
 
 abstract class Purchasable
 {
-    #int cost
-    #int timeOfRental
-    +int getPrice()
+    -List[Purchaseable] options
+    +int getCost()
+
 }
 
 Purchasable <|-down- Tool
@@ -102,9 +112,17 @@ class ExtensionCord
 class AccessoryKit
 class ProtectiveGearPackage
 
+class ToolDecoratorAdder
+{
+    - Tool tool
+}
+
 PurchaseDecorator <|-down- ExtensionCord
 PurchaseDecorator <|-down- AccessoryKit
 PurchaseDecorator <|-down- ProtectiveGearPackage
+PurchaseDecorator <|-down- ToolDecoratorAdder
+
+ToolDecoratorAdder --> "1" Tool
 
 PurchaseDecorator -- Purchasable: component
 
@@ -146,8 +164,8 @@ class CustomerPool
     + getInstance()
 
     - List[Customer] customers
-    + getCustomerPurchase()
-    + getCustomerReturn()
+    + getCustomerToMakePurchase()
+    + getCustomerToReturnItems()
 }
 
 class Main
@@ -159,5 +177,11 @@ CustomerPool o-- "12" Customer
 Main -- "1" CustomerPool
 Main --> Customer
 
+class SimpleToolFactory
+{
+    + createTool()
+}
+
+ToolshopInventory --> "1" SimpleToolFactory
 
 @enduml

@@ -2,6 +2,6 @@ public class Painting extends ToolCategory
 {
 	public Painting()
 	{
-		super("painting");
+		super("painting",20);
 	}
 }

@@ -1,7 +1,5 @@
-import java.rmi.NoSuchObjectException;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Set;
 
 /*
@@ -15,6 +13,7 @@ public class ToolShopInventory implements ObjectPool
 	private int numToolsCurrentlyInInventory;
 	private static ToolShopInventory instance = new ToolShopInventory(getInitialToolCounts());
 	private static boolean isShutdown = false;
+	private HashMap<String,Integer> categoryCountsCurrent;
 	
 	private static HashMap<String,Integer> getInitialToolCounts()
 	{
@@ -37,11 +36,10 @@ public class ToolShopInventory implements ObjectPool
 		SimpleToolFactory stf = new SimpleToolFactory();
 		//use the simple tool factory to initialize all of these objects
 		Set countKeys = toolCounts.keySet();
-		Iterator tcit = countKeys.iterator();
-		while(tcit.hasNext())
+		for(Object countKey : countKeys)
 		{
-			String type = (String)tcit.next();
-			LinkedList<Tool> nextQ = new LinkedList<Tool>();
+			String type = (String) countKey;
+			LinkedList<Tool> nextQ = new LinkedList<>();
 			//now create all of the tools of this type
 			int numTools = toolCounts.get(type);
 			for(int i = 0; i < numTools; i++)
@@ -53,9 +51,10 @@ public class ToolShopInventory implements ObjectPool
 			
 			
 			//finally, add that queue to the hashmap for the tool inventory
-			inventory.put(type,nextQ);
+			inventory.put(type, nextQ);
 		}
 		numToolsCurrentlyInInventory = 24;//we'll change this around whenever a tool gets checked out or in
+		categoryCountsCurrent = toolCounts;//we start off with everything as it started
 	}
 	
 	public static ToolShopInventory getInstance()
@@ -75,6 +74,7 @@ public class ToolShopInventory implements ObjectPool
 		{
 			ret = inventory.get(type).removeFirst();//get the first tool in the queue of the correct type
 			numToolsCurrentlyInInventory--;
+			categoryCountsCurrent.put(type,categoryCountsCurrent.get(type) - 1);//update this category's count
 		}
 		return ret;
 	}
@@ -84,9 +84,10 @@ public class ToolShopInventory implements ObjectPool
 	{
 		if(isShutdown)
 			throw new IllegalArgumentException("ToolShopInventory has been shut down!");
-		String type = ((Tool) obj).category.getCategoryName();//now we have the type of tool, add it to the correct queue in the hashmap
+		String type = ((Tool) obj).getCategory().getCategoryName();//now we have the type of tool, add it to the correct queue in the hashmap
 		inventory.get(type).add((Tool) obj);
 		numToolsCurrentlyInInventory++;
+		categoryCountsCurrent.put(type,categoryCountsCurrent.get(type) + 1);//update this category's count
 	}
 	
 	@Override
@@ -95,10 +96,9 @@ public class ToolShopInventory implements ObjectPool
 		if(isShutdown)
 			throw new IllegalArgumentException("ToolShopInventory has been shut down!");
 		Set keys = inventory.keySet();
-		Iterator keyit = keys.iterator();
-		while(keyit.hasNext())
+		for(Object key : keys)
 		{
-			LinkedList current = inventory.get(keyit.next());
+			LinkedList current = inventory.get(key);
 			current.clear();
 		}
 		inventory.clear();
@@ -110,5 +110,10 @@ public class ToolShopInventory implements ObjectPool
 		if(isShutdown)
 			throw new IllegalArgumentException("ToolShopInventory has been shut down!");
 		return numToolsCurrentlyInInventory;
+	}
+	
+	public HashMap<String, Integer> getCategoryCountsCurrent()
+	{
+		return categoryCountsCurrent;
 	}
 }
