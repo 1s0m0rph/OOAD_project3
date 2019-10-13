@@ -1,7 +1,8 @@
-package toolshop;
+package toolshop.test;
 
 import org.junit.jupiter.api.Test;
 import toolshop.RegularCustomer;
+import toolshop.ToolShopInventory;
 
 class RegularCustomerTest
 {

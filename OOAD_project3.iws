@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9154bfbb-818c-4437-bae1-1b3d1741439d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/OOAD_project3.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/OOAD_project3.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOAD_project3.iws" beforeDir="false" afterPath="$PROJECT_DIR$/OOAD_project3.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/project3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AccessoryKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/AccessoryKit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BusinessCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/BusinessCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CasualCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/CasualCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Concrete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Concrete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CustomerPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/CustomerPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExtensionCord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/ExtensionCord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjectPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/ObjectPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Painting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Painting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plumbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Plumbing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProtectiveGearPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/ProtectiveGearPackage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Purchasable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Purchasable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PurchaseDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/PurchaseDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegularCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/RegularCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RegularCustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/RegularCustomerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RentalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/RentalRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SimpleToolFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/SimpleToolFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Tool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToolCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/ToolCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToolDecoratorAdder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/ToolDecoratorAdder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToolShopInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/ToolShopInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToolShopInventoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Woodwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Woodwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Yardwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Yardwork.java" afterDir="false" />
-    </list>
+    <list default="true" id="9154bfbb-818c-4437-bae1-1b3d1741439d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +25,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="groovy" value="1" />
-          <entry key="java" value="114" />
+          <entry key="java" value="115" />
           <entry key="md" value="1" />
           <entry key="plantuml" value="4" />
         </counts>
@@ -63,7 +33,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="114" />
+          <entry key="JAVA" value="115" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
@@ -87,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/toolshop/Store.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="85">
               <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -98,29 +68,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/toolshop/RentalRecord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/toolshop/test/StoreTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            <state relative-caret-position="255">
+              <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            <state relative-caret-position="459">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -182,6 +146,18 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/toolshop/ToolShopInventory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -238,6 +214,7 @@
         <option value="$PROJECT_DIR$/src/ToolShopInventoryTest.java" />
         <option value="$PROJECT_DIR$/src/toolshop/Tool.java" />
         <option value="$PROJECT_DIR$/test/toolshoptest/test/ToolShopInventoryTest.java" />
+        <option value="$PROJECT_DIR$/src/toolshop/ToolShopInventory.java" />
       </list>
     </option>
   </component>
@@ -263,11 +240,6 @@
             <path>
               <item name="OOAD_project3" type="b2602c69:ProjectViewProjectNode" />
               <item name="project3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OOAD_project3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project3" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OOAD_project3" type="b2602c69:ProjectViewProjectNode" />
@@ -301,7 +273,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570995912994" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570996223158" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -327,6 +299,9 @@
       <recent name="" />
       <recent name="groovy.util.GroovyTestCase" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Isomorph\Documents\School Fall 2019\CSCI\4448\project3" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -340,7 +315,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CasualCustomerTest">
+  <component name="RunManager" selected="JUnit.RegularCustomerTest">
     <configuration name="CasualCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project3" />
       <extension name="coverage">
@@ -360,8 +335,8 @@
     </configuration>
     <configuration name="RegularCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project3" />
-      <option name="PACKAGE_NAME" value="toolshop" />
-      <option name="MAIN_CLASS_NAME" value="toolshop.RegularCustomerTest" />
+      <option name="PACKAGE_NAME" value="toolshop.test" />
+      <option name="MAIN_CLASS_NAME" value="toolshop.test.RegularCustomerTest" />
       <option name="METHOD_NAME" value="" />
       <option name="PARAMETERS" value="" />
       <dir value="$PROJECT_DIR$/src" />
@@ -397,9 +372,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CasualCustomerTest" />
         <item itemvalue="JUnit.RegularCustomerTest" />
         <item itemvalue="JUnit.StoreTest" />
+        <item itemvalue="JUnit.CasualCustomerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -417,27 +392,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Run_All_Tests - 2019.10.13 at 13h 32m 02s.xml">
-      <configuration name="Run All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Run_All_Tests - 2019.10.13 at 13h 33m 59s.xml">
-      <configuration name="Run All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Run_All_Tests - 2019.10.13 at 13h 36m 27s.xml">
-      <configuration name="Run All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ToolShopInventoryTest - 2019.10.13 at 13h 36m 40s.xml">
-      <configuration name="ToolShopInventoryTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Run_All_Tests - 2019.10.13 at 13h 38m 15s.xml">
-      <configuration name="Run All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Run_All_Tests - 2019.10.13 at 13h 38m 49s.xml">
-      <configuration name="Run All Tests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Run_All_Tests - 2019.10.13 at 13h 39m 18s.xml">
-      <configuration name="Run All Tests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_project3 - 2019.10.13 at 13h 39m 29s.xml">
       <configuration name="All in project3" configurationId="JUnit" />
     </history-entry>
@@ -447,9 +401,40 @@
     <history-entry file="Run_All_Tests - 2019.10.13 at 13h 41m 31s.xml">
       <configuration name="Run All Tests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="Run_All_Tests - 2019.10.13 at 13h 42m 31s.xml">
+      <configuration name="Run All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_All_Tests - 2019.10.13 at 13h 42m 42s.xml">
+      <configuration name="Run All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_All_Tests - 2019.10.13 at 13h 42m 51s.xml">
+      <configuration name="Run All Tests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StoreTest_update - 2019.10.13 at 13h 44m 08s.xml">
+      <configuration name="StoreTest.update" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ToolShopInventoryTest_release - 2019.10.13 at 13h 44m 11s.xml">
+      <configuration name="ToolShopInventoryTest.release" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="CasualCustomerTest - 2019.10.13 at 13h 44m 15s.xml">
+      <configuration name="CasualCustomerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="toolshop_test_in_project3 - 2019.10.13 at 13h 44m 36s.xml">
+      <configuration name="toolshop.test in project3" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49962825" visible="true" weight="0.18839428" />
       <window_info id="Structure" order="1" sideWeight="0.50037175" side_tool="true" weight="0.24960938" />
@@ -464,7 +449,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.23197027" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32955405" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32955405" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3227513" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" weight="0.32955405" />
@@ -585,7 +570,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/plantuml">
+    <entry file="file://$PROJECT_DIR$/plantuml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1286">
           <caret line="186" column="7" selection-start-line="186" selection-start-column="7" selection-end-line="186" selection-end-column="7" />
@@ -610,13 +595,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/ToolShopInventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="116" column="37" lean-forward="true" selection-start-line="116" selection-start-column="37" selection-end-line="116" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -660,6 +638,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="20" selection-start-column="20" selection-end-column="20" />
+          <folding>
+            <element signature="e#152#153#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#238#239#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -684,29 +668,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Store.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/toolshop/RentalRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/StoreTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -745,6 +710,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Store.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#404#405#0" expanded="true" />
+            <element signature="e#429#430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/toolshop/test/CasualCustomerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -752,10 +739,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java">
+    <entry file="file://$PROJECT_DIR$/src/toolshop/ToolShopInventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/StoreTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
