@@ -8,3 +8,4 @@
 - Strategy (for deciding which category a tool is in)
 - Template (for the different types of customers)
 - Singleton (the store)
+- Simple Factory (for creating tools of different types)
