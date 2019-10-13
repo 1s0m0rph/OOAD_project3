@@ -1,3 +1,5 @@
+package toolshop;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Set;
@@ -5,7 +7,6 @@ import java.util.Set;
 /*
 Object pool for the inventory of the tool shop
 
-TODO: add tests for all of this functionality
  */
 public class ToolShopInventory implements ObjectPool
 {

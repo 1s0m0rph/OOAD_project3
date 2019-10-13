@@ -1,3 +1,7 @@
+package toolshop;
+
+import toolshop.AccessoryKit;
+
 import java.util.*;
 
 public abstract class Customer extends Observable

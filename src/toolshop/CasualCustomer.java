@@ -1,3 +1,5 @@
+package toolshop;
+
 public class CasualCustomer extends Customer
 {
 	public CasualCustomer(String name)

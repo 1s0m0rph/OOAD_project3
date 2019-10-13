@@ -1,3 +1,9 @@
+package toolshop;
+
+import toolshop.Concrete;
+import toolshop.Painting;
+import toolshop.Plumbing;
+
 public class SimpleToolFactory
 {
 	public Tool createTool(String type)

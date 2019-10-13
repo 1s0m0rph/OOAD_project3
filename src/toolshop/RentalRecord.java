@@ -1,3 +1,7 @@
+package toolshop;
+
+import toolshop.Customer;
+
 import java.util.ArrayList;
 
 public class RentalRecord

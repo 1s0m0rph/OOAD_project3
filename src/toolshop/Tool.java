@@ -1,3 +1,4 @@
+package toolshop;
 import java.util.ArrayList;
 
 public class Tool extends Purchasable
@@ -11,7 +12,7 @@ public class Tool extends Purchasable
 		this.category = category;
 	}
 	
-	ToolCategory getCategory()
+	public ToolCategory getCategory()
 	{
 		return category;
 	}

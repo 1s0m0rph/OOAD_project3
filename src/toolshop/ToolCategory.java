@@ -1,3 +1,5 @@
+package toolshop;
+
 public class ToolCategory
 {
 	private String category;

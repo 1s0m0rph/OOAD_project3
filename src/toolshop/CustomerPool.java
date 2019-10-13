@@ -1,3 +1,5 @@
+package toolshop;
+
 import java.util.LinkedList;//for customer queue
 
 public class CustomerPool

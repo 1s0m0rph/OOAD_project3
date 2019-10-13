@@ -1,6 +1,7 @@
-import org.junit.jupiter.api.Test;
+package toolshop;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+import toolshop.RegularCustomer;
 
 class RegularCustomerTest
 {

@@ -1,3 +1,5 @@
+package toolshop;
+
 public class AccessoryKit extends PurchaseDecorator
 {
 	public AccessoryKit(Purchasable purchasable)

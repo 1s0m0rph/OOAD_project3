@@ -1,3 +1,5 @@
+package toolshop;
+
 public class ExtensionCord extends PurchaseDecorator
 {
 	public ExtensionCord(Purchasable purchasable)

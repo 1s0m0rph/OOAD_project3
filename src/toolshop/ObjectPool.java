@@ -1,3 +1,5 @@
+package toolshop;
+
 public interface ObjectPool<T>
 {
 	default T get(String type)

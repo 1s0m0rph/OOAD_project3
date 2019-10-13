@@ -1,3 +1,5 @@
+package toolshop;
+
 public class BusinessCustomer extends Customer
 {
 	public BusinessCustomer(String name)

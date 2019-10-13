@@ -1,3 +1,4 @@
+package toolshop;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -7,7 +8,7 @@ public class Store implements Observer
 	private ArrayList<RentalRecord> rentalRecords;
 	private ToolShopInventory inventory = ToolShopInventory.getInstance();
 	private static Store ourInstance = new Store();
-	private int currentTime;//may want to move this
+	private int currentTime = 0;//may want to move this
 	
 	public static Store getInstance()
 	{
@@ -51,5 +52,15 @@ public class Store implements Observer
 		
 		RentalRecord rr = new RentalRecord((Customer) subject, toolsRented, timeRentedAt, timeRentedFor);
 		rentalRecords.add(rr);
+	}
+	
+	public ArrayList<RentalRecord> getRentalRecords()
+	{
+		return rentalRecords;
+	}
+	
+	public void incrementDay()
+	{
+		currentTime++;
 	}
 }

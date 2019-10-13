@@ -1,3 +1,7 @@
+package toolshop;
+
+import toolshop.Purchasable;
+import toolshop.PurchaseDecorator;
 
 /*
 This is an odd class that lets us add tools using the decorator pattern

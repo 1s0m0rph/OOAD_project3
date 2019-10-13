@@ -1,3 +1,7 @@
+package toolshop;
+
+import toolshop.Purchasable;
+
 import java.util.ArrayList;
 
 public abstract class PurchaseDecorator extends Purchasable

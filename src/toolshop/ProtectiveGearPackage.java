@@ -1,3 +1,5 @@
+package toolshop;
+
 public class ProtectiveGearPackage extends PurchaseDecorator
 {
 	public ProtectiveGearPackage(Purchasable purchasable)
