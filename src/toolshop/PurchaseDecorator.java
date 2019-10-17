@@ -21,4 +21,9 @@ public abstract class PurchaseDecorator extends Purchasable
 		retOpts.add(this);
 		return retOpts;
 	}
+
+	public int getCost()
+	{
+		return purchasable.getCost();
+	}
 }

@@ -53,17 +53,18 @@ public abstract class Customer extends Observable
 				//set the rental time variables now
 				tool.setTimeOfRental(rentalTime);//this will need to be reset when the tool is returned
 				//add this to the purchase
-				if(p == null)
-				{
-					//add it by assignment
-					p = tool;
-				}
-				else
-				{
-					//add it by decorator construction
-					p = new ToolDecoratorAdder(p,tool);
-				}
+				//if(p == null)
+				//{
+				//	//add it by assignment
+				//	p = tool;
+				//}
+				//else
+				//{
+				//	//add it by decorator construction
+				//	p = new ToolDecoratorAdder(p,tool)
+				//}
 				toolsRentedSoFar++;//we successfully added a tool
+				p = tool;
 			}
 		}
 		

@@ -4,15 +4,15 @@ import toolshop.Customer;
 
 import java.util.ArrayList;
 
-public class RentalRecord
+public class RentalRecord<T extends Purchasable>
 {
 	public Customer renter;
-	public ArrayList<Tool> toolsRented;
+	public ArrayList<T> toolsRented;
 	public int dayRented;
 	public int totalRentalTime;
 	public int dayDue;
 	
-	public RentalRecord(Customer renter, ArrayList<Tool> toolsRented, int dayRented, int totalRentalTime)
+	public RentalRecord(Customer renter, ArrayList<T> toolsRented, int dayRented, int totalRentalTime)
 	{
 		this.renter = renter;
 		this.toolsRented = toolsRented;
