@@ -123,7 +123,7 @@ public abstract class Customer extends Observable
 			for(int j = 0; j < numOptionsToAdd; j++)
 			{
 				//pick a random option to add
-				int ri = rand.nextInt(3);
+				int ri = getOptionIdxToAdd();
 				switch(ri)
 				{
 					case 0:
