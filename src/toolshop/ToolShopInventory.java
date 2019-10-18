@@ -86,8 +86,10 @@ public class ToolShopInventory implements ObjectPool
 	{
 		if(isShutdown)
 			throw new IllegalArgumentException("ToolShopInventory has been shut down!");
-		String type = ((Tool) obj).getCategory().getCategoryName();//now we have the type of tool, add it to the correct queue in the hashmap
-		inventory.get(type).add((Tool) obj);
+		Tool tool = ((Purchasable) obj).getTool();
+		String type = tool.getCategory().getCategoryName();//now we have the type of tool, add it to the correct queue in the hashmap
+		tool.setTimeOfRental(0);
+		inventory.get(type).add(tool);
 		numToolsCurrentlyInInventory++;
 		categoryCountsCurrent.put(type,categoryCountsCurrent.get(type) + 1);//update this category's count
 	}

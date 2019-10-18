@@ -1,5 +1,7 @@
 package toolshop;
 
+import javax.print.attribute.standard.RequestingUserName;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -33,26 +35,17 @@ public class Store implements Observer
 	 */
 	public void update(Observable subject, Object data)
 	{
-		ArrayList<Purchasable> options = ((Purchasable) data).getOptions();
-		
-		//we have the data, now let's make a rental record out of it
-		ArrayList<Tool> toolsRented = new ArrayList<>();
-		int timeRentedFor = ((Purchasable) data).timeOfRental;//guaranteed because of how customer makes the purchase
+		// cast data to an ArrayList of Purchasables
+		ArrayList<Purchasable> toolsRented = (ArrayList<Purchasable>) data;
+		// get the rental period from the first object
+		int timeRentedFor = toolsRented.get(0).getTimeOfRental();//guaranteed because of how customer makes the purchase
 		int timeRentedAt = currentTime;
-		
-		//add all the tools rented into the list
-		for(Purchasable opt : options)
-		{
-			if(opt instanceof Tool)
-			{
-				toolsRented.add((Tool) opt);
-			} else if(opt instanceof ToolDecoratorAdder)//we'll need this for the later ones
-			{
-				toolsRented.add(((ToolDecoratorAdder) opt).tool);
-			}
-		}
 
-		dailyRevenue += ((Purchasable) data).getCost();
+		// we can just pass the list of tools rented directly to the rental record
+		for (Purchasable p : toolsRented)
+		{
+			dailyRevenue += p.getCost();
+		}
 		RentalRecord rr = new RentalRecord((Customer) subject, toolsRented, timeRentedAt, timeRentedFor);
 		rentalRecords.add(rr);
 	}
@@ -64,7 +57,7 @@ public class Store implements Observer
 	
 	public void returnTools(RentalRecord record)
 	{
-		for(Tool tool : record.toolsRented)
+		for(Purchasable tool : record.toolsRented)
 		{
 			inventory.release(tool);
 		}
@@ -80,28 +73,36 @@ public class Store implements Observer
 		return inventory.getNumToolsCurrentlyInInventory();
 	}
 	
-	public void incrementDay()
+	public ArrayList<RentalRecord> incrementDay()
 	{
 		currentTime++;
 		totalRevenue += dailyRevenue;
 		dailyRevenue = 0;
-		// we can't remove while we iterate, so get indexes to remove
-		ArrayList<Integer> removeIdxs = new ArrayList<>(rentalRecords.size());
-		for(int i = 0; i < rentalRecords.size(); i++)
+		ArrayList<RentalRecord> completedRentals = new ArrayList<>();
+		// iterate backwards so that we can remove records
+		for(int i = rentalRecords.size()-1; i >= 0; i--)
 		{
 			RentalRecord record = rentalRecords.get(i);
 			if(record.getDueDate() == currentTime)
 			{
 				// return tools, in so doing remove the record from the rentalRecords
 				record.returnTools();
-				removeIdxs.add(i);
+				completedRentals.add(record);
+				rentalRecords.remove(i);
 			}
 		}
+		return completedRentals;
+	}
 
-		for (int i : removeIdxs)
+	public ArrayList<RentalRecord> getRentalsForDate(int day)
+	{
+		ArrayList<RentalRecord> dailyRecords = new ArrayList<>();
+		for (RentalRecord rr : rentalRecords)
 		{
-			rentalRecords.remove(i);
+			if (rr.dayRented == day)
+				dailyRecords.add(rr);
 		}
+		return dailyRecords;
 	}
 
 	public int getDailyRevenue()

@@ -2,6 +2,7 @@ package toolshop;
 
 import toolshop.AccessoryKit;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public abstract class Customer extends Observable
@@ -81,7 +82,9 @@ public abstract class Customer extends Observable
 			// can't rent more than 3 tools
 			return;
 		}
+
 		Random rand = new Random();
+		// get customer preferences
 		int numToolsToRent = Math.min(getNumToolsToRent(),getMaxToolsRentable());//don't rent more than the max, but if what we want is too much we can always just rent not as much
 		if(numToolsToRent == 0)
 			return;//we don't even show up to the store
@@ -91,70 +94,58 @@ public abstract class Customer extends Observable
 		//do a sanity check to make sure there are actually enough tools in the inventory
 		if(tsi.getNumToolsCurrentlyInInventory() < numToolsToRent)
 			return;//they don't have what the customer wants, so the customer just leaves
-		
-		Purchasable p = null;
-		
-		int toolsRentedSoFar = 0;
+
+		// create an ArrayList to store the tools we need
+		ArrayList<Purchasable> tools = new ArrayList<>(numToolsToRent);
+		// get the available categories
 		ArrayList<String> possibleToolCats = new ArrayList(Arrays.asList(tsi.getCategoryCountsCurrent().keySet().toArray()));//is this a safe conversion?
-		while(toolsRentedSoFar < numToolsToRent)
+
+		// rent each tool
+		for (int i=0; i < numToolsToRent; i++)
 		{
-			//pick a (possibly random) category
-			int catidx = getToolCategoryIndexToRentFromValid(possibleToolCats.size());
-			Tool tool = (Tool) tsi.get(possibleToolCats.get(catidx));
-			if(tool == null)
+			Purchasable tool = null;
+			// get a valid tool category
+			while (tool == null)
 			{
-				//remove this category from the valid ones and try again
-				possibleToolCats.remove(catidx);
-			}
-			else
-			{
-				//set the rental time variables now
-				tool.setTimeOfRental(rentalTime);//this will need to be reset when the tool is returned
-				//add this to the purchase
-				if(p == null)
+				int catidx = getToolCategoryIndexToRentFromValid(possibleToolCats.size());
+				tool = (Tool) tsi.get(possibleToolCats.get(catidx));
+				if(tool == null)
 				{
-					//add it by assignment
-					p = tool;
+					//remove this category from the valid ones and try again
+					possibleToolCats.remove(catidx);
 				}
-				else
-				{
-					//add it by decorator construction
-					p = new ToolDecoratorAdder(p,tool);
-					p.setTimeOfRental(rentalTime);//otherwise we get zeroes propagated
-				}
-				toolsRentedSoFar++;//we successfully added a tool
 			}
-		}
-		
-		//now we have all the tools in the purchasable object, let's add the options
-		int numOptionsToAdd = getNumOptionsToAdd();
-		for(int i = 0; i < numOptionsToAdd; i++)
-		{
-			//pick an option to add
-			int ri = getOptionIdxToAdd();
-			PurchaseDecorator accessory = null;
-			switch(ri)
+			//set the rental time variables now
+			tool.setTimeOfRental(rentalTime);//this will need to be reset when the tool is returned
+
+			// add options to each tool
+			int numOptionsToAdd = getNumOptionsToAdd();
+			for(int j = 0; j < numOptionsToAdd; j++)
 			{
-				case 0:
-					accessory = new AccessoryKit(p);
-					break;
-				case 1:
-					accessory = new ExtensionCord(p);
-					break;
-				case 2:
-					accessory = new ProtectiveGearPackage(p);
-					break;
-				default:
-					throw new IllegalArgumentException("randint doesn't work how I think it does. This should never happen.");
+				//pick a random option to add
+				int ri = getOptionIdxToAdd();
+				switch(ri)
+				{
+					case 0:
+						tool = new AccessoryKit(tool);
+						break;
+					case 1:
+						tool = new ExtensionCord(tool);
+						break;
+					case 2:
+						tool = new ProtectiveGearPackage(tool);
+						break;
+					default:
+						throw new IllegalArgumentException("randint doesn't work how I think it does. This should never happen.");
+				}
 			}
-			accessory.setTimeOfRental(rentalTime);//set the rental time even for the accessory objects to make our lives easier later on
-			p = accessory;
+			tools.add(tool);
 		}
 
-		toolsRented = toolsRentedSoFar;
+		toolsRented += tools.size();
 		//now we have the purchaseable and because of how we handled it, the items have been removed from the inventory
 		//notify the store of the purchase
 		setChanged();//java weirdness requires this
-		notifyObservers(p);//note that because of the java weirdness we don't need to explicitly tell the store who did the purchase; it's part of the observer implementation
+		notifyObservers(tools);//note that because of the java weirdness we don't need to explicitly tell the store who did the purchase; it's part of the observer implementation
 	}
 }

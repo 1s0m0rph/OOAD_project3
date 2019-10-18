@@ -29,12 +29,12 @@ class StoreTest
 		assert(rr.dayDue == 3);
 		assert(rr.toolsRented.size() == 3);
 		assert(rr.renter == customer);
-		assert(rr.toolsRented.get(0).getCategory().getCategoryName().equalsIgnoreCase("concrete"));
-		assert(rr.toolsRented.get(1).getCategory().getCategoryName().equalsIgnoreCase("painting"));
-		assert(rr.toolsRented.get(2).getCategory().getCategoryName().equalsIgnoreCase("yardwork"));//all these guaranteed bc of deterministic customer
+		assert(rr.toolsRented.get(0).getTool().getCategory().getCategoryName().equalsIgnoreCase("concrete"));
+		assert(rr.toolsRented.get(1).getTool().getCategory().getCategoryName().equalsIgnoreCase("painting"));
+		assert(rr.toolsRented.get(2).getTool().getCategory().getCategoryName().equalsIgnoreCase("yardwork"));//all these guaranteed bc of deterministic customer
 		rr.returnTools();
 		s.getRentalRecords().remove(0);
-		assert(s.getDailyRevenue() == 323);//this order should *always* cost 323 for 3 days
+		assert(s.getDailyRevenue() == 339);//this order should *always* cost 323 for 3 days
 	}
 	
 	@Test

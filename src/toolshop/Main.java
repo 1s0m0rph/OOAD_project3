@@ -1,5 +1,6 @@
 package toolshop;
 
+import javax.print.attribute.standard.RequestingUserName;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
@@ -14,16 +15,20 @@ public class Main
 
 		for (int i=0; i < 35; i++)
 		{
-			store.incrementDay();
-			System.out.printf("Day %d\n", store.getCurrentDay());
+			ArrayList<RentalRecord> completedRentals = store.incrementDay();
+			System.out.printf("\nDay %d\n", store.getCurrentDay());
+			for (RentalRecord rr : completedRentals)
+			{
+				System.out.println(rr);
+			}
 			int numCustomers = r.nextInt(customers.poolCount());
-			ArrayList<Customer> inStore = new ArrayList<>(numCustomers);
 			for (int j=0; j < numCustomers; j++)
 			{
 				Customer c = (Customer) customers.get();
 				c.rentTools();
 				customers.release(c);
 			}
+			System.out.printf("$%d in revenue today\n", store.getDailyRevenue());
 		}
 	}
 }
