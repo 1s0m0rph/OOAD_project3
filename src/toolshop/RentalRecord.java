@@ -36,4 +36,19 @@ public class RentalRecord
 	{
 		return dayDue;
 	}
+
+	public String toString()
+	{
+		String retString  = "========\n";
+		retString += renter.getName() + "\n";
+		retString += toolsRented.size()+ " tools rented for "+ totalRentalTime +" days on "+ dayRented +"\n";
+		for (int i=0; i < toolsRented.size(); i++)
+		{
+			Purchasable p = toolsRented.get(i);
+			ArrayList<PurchaseDecorator> options = p.getOptions();
+			Tool tool = p.getTool();
+			retString += i +": "+ tool.getCategory().getCategoryName() +" tool with: ";
+		}
+		return retString;
+	}
 }

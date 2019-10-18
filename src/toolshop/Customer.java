@@ -107,7 +107,7 @@ public abstract class Customer extends Observable
 			// get a valid tool category
 			while (tool == null)
 			{
-				int catidx = rand.nextInt(possibleToolCats.size());
+				int catidx = getToolCategoryIndexToRentFromValid(possibleToolCats.size());
 				tool = (Tool) tsi.get(possibleToolCats.get(catidx));
 				if(tool == null)
 				{
@@ -142,7 +142,7 @@ public abstract class Customer extends Observable
 			tools.add(tool);
 		}
 
-		toolsRented = tools.size();
+		toolsRented += tools.size();
 		//now we have the purchaseable and because of how we handled it, the items have been removed from the inventory
 		//notify the store of the purchase
 		setChanged();//java weirdness requires this

@@ -19,10 +19,10 @@ public abstract class PurchaseDecorator extends Purchasable
 		return purchasable.getTool();
 	}
 	
-	public ArrayList<Purchasable> getOptions()
+	public ArrayList<PurchaseDecorator> getOptions()
 	{
 		// recursively generate options list
-		ArrayList<Purchasable> optionsList = purchasable.getOptions();
+		ArrayList<PurchaseDecorator> optionsList = purchasable.getOptions();
 		optionsList.add(this);
 		return optionsList;
 	}

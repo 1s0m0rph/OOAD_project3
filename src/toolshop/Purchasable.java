@@ -10,7 +10,7 @@ public abstract class Purchasable
 
 	public abstract Tool getTool();
 	
-	public abstract ArrayList<Purchasable> getOptions();
+	public abstract ArrayList<PurchaseDecorator> getOptions();
 
 	public int getTimeOfRental()
 	{

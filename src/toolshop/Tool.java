@@ -26,12 +26,12 @@ public class Tool extends Purchasable
 	{
 		return this;
 	}
-	
+
 	/*
 	We're going to model the purchase as a bunch of these strung together with decorator. Because of that we'll need to be careful when returning the tools
 	 */
-	public ArrayList<Purchasable> getOptions()
+	public ArrayList<PurchaseDecorator> getOptions()
 	{
-		return new ArrayList<Purchasable>();
+		return new ArrayList<PurchaseDecorator>();
 	}
 }
