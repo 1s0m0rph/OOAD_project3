@@ -29,6 +29,9 @@ class StoreTest
 		assert(rr.dayDue == 3);
 		assert(rr.toolsRented.size() == 3);
 		assert(rr.renter == customer);
+		System.out.println(rr.toolsRented.get(0).getTool().getCategory().getCategoryName());
+		System.out.println(rr.toolsRented.get(1).getTool().getCategory().getCategoryName());
+		System.out.println(rr.toolsRented.get(2).getTool().getCategory().getCategoryName());
 		assert(rr.toolsRented.get(0).getTool().getCategory().getCategoryName().equalsIgnoreCase("concrete"));
 		assert(rr.toolsRented.get(1).getTool().getCategory().getCategoryName().equalsIgnoreCase("painting"));
 		assert(rr.toolsRented.get(2).getTool().getCategory().getCategoryName().equalsIgnoreCase("yardwork"));//all these guaranteed bc of deterministic customer

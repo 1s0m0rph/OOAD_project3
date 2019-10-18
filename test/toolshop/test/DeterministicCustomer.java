@@ -47,6 +47,6 @@ public class DeterministicCustomer extends Customer
 	 */
 	protected int getOptionIdxToAdd()
 	{
-		return optionCount++;
+		return optionCount++ % 3;
 	}
 }
