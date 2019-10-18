@@ -119,7 +119,7 @@ public abstract class Customer extends Observable
 			tool.setTimeOfRental(rentalTime);//this will need to be reset when the tool is returned
 
 			// add options to each tool
-			int numOptionsToAdd = rand.nextInt(6);
+			int numOptionsToAdd = getNumOptionsToAdd();
 			for(int j = 0; j < numOptionsToAdd; j++)
 			{
 				//pick a random option to add
