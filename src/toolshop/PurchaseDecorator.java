@@ -36,4 +36,6 @@ public abstract class PurchaseDecorator extends Purchasable
 	{
 		return purchasable.getTimeOfRental();
 	}
+
+	public abstract String getType();
 }

@@ -19,4 +19,8 @@ public class ToolDecoratorAdder extends PurchaseDecorator
 	{
 		return purchasable.getCost() + tool.getCost();
 	}
+
+	public String getType() {
+		return null;
+	}
 }

@@ -42,13 +42,25 @@ public class RentalRecord
 		String retString  = "========\n";
 		retString += renter.getName() + "\n";
 		retString += toolsRented.size()+ " tools rented for "+ totalRentalTime +" days on "+ dayRented +"\n";
+		int cost = 0;
 		for (int i=0; i < toolsRented.size(); i++)
 		{
 			Purchasable p = toolsRented.get(i);
+			cost += p.getCost();
 			ArrayList<PurchaseDecorator> options = p.getOptions();
 			Tool tool = p.getTool();
-			retString += i +": "+ tool.getCategory().getCategoryName() +" tool with: ";
+			retString += (i+1) +": "+ tool.getCategory().getCategoryName() +" tool with: ";
+			for (int j=0; j < options.size(); j++)
+			{
+				retString += options.get(j).getType();
+				if (j != options.size()-1)
+					retString += ", ";
+				else
+					retString += "\n";
+			}
 		}
+		retString += "Total: $" + cost + "\n";
+		retString += "=========";
 		return retString;
 	}
 }

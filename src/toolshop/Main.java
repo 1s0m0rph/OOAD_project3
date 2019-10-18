@@ -16,10 +16,10 @@ public class Main
 		for (int i=0; i < 35; i++)
 		{
 			ArrayList<RentalRecord> completedRentals = store.incrementDay();
-			System.out.printf("Day %d\n", store.getCurrentDay());
+			System.out.printf("\nDay %d\n", store.getCurrentDay());
 			for (RentalRecord rr : completedRentals)
 			{
-
+				System.out.println(rr);
 			}
 			int numCustomers = r.nextInt(customers.poolCount());
 			for (int j=0; j < numCustomers; j++)
