@@ -1,4 +1,5 @@
 package toolshop;
+
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -30,11 +31,11 @@ public class Store implements Observer
 	 */
 	public void update(Observable subject, Object data)
 	{
-		ArrayList<Purchasable> options = ((Purchasable)data).getOptions();
+		ArrayList<Purchasable> options = ((Purchasable) data).getOptions();
 		
 		//we have the data, now let's make a rental record out of it
 		ArrayList<Tool> toolsRented = new ArrayList<>();
-		int timeRentedFor = ((Purchasable)data).timeOfRental;//guaranteed because of how customer makes the purchase
+		int timeRentedFor = ((Purchasable) data).timeOfRental;//guaranteed because of how customer makes the purchase
 		int timeRentedAt = currentTime;
 		
 		//add all the tools rented into the list
@@ -43,8 +44,7 @@ public class Store implements Observer
 			if(opt instanceof Tool)
 			{
 				toolsRented.add((Tool) opt);
-			}
-			else if(opt instanceof  ToolDecoratorAdder)//we'll need this for the later ones
+			} else if(opt instanceof ToolDecoratorAdder)//we'll need this for the later ones
 			{
 				toolsRented.add(((ToolDecoratorAdder) opt).tool);
 			}
@@ -58,19 +58,23 @@ public class Store implements Observer
 	{
 		return rentalRecords;
 	}
-
+	
 	public void returnTools(RentalRecord record)
 	{
-	    for (Tool tool : record.toolsRented) {
-	    	inventory.release(tool);
+		for(Tool tool : record.toolsRented)
+		{
+			inventory.release(tool);
 		}
+		rentalRecords.remove(record);
 	}
-
-	public int getCurrentDay() {
-	    return currentTime;
+	
+	public int getCurrentDay()
+	{
+		return currentTime;
 	}
-
-	public int getCurrentInventoryCount() {
+	
+	public int getCurrentInventoryCount()
+	{
 		return inventory.getNumToolsCurrentlyInInventory();
 	}
 	
@@ -78,19 +82,14 @@ public class Store implements Observer
 	{
 		currentTime++;
 		// we can't remove while we iterate, so get indexes to remove
-		ArrayList<Integer> expiredRentals = new ArrayList<>();
-		for (int i=0; i<rentalRecords.size(); i++)
+		for(int i = 0; i < rentalRecords.size(); i++)
 		{
 			RentalRecord record = rentalRecords.get(i);
-			if (record.getDueDate() == currentTime)
+			if(record.getDueDate() == currentTime)
 			{
-				// return tools and mark records for destruction
+				// return tools, in so doing remove the record from the rentalRecords
 				returnTools(record);
-				expiredRentals.add(i);
 			}
 		}
-
-		// delete the records that have expired
-		for (int i : expiredRentals) { rentalRecords.remove(i); }
 	}
 }

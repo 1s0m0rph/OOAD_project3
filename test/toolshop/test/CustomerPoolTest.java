@@ -71,6 +71,8 @@ class CustomerPoolTest
 	@Order(5)
 	void shutdown()
 	{
+		if(System.getenv("DO_SHUTDOWN_TESTS").equalsIgnoreCase("false"))
+			return;//if we do shutdown tests when running everything we're going to run into problems with object pools having been shutdown before tests that depend on them actually run
 		CustomerPool customers = CustomerPool.getInstance();
 		boolean caughtOnGetNamed = false;
 		boolean caughtOnGetNext = false;

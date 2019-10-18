@@ -64,6 +64,7 @@ public abstract class Customer extends Observable
 				{
 					//add it by decorator construction
 					p = new ToolDecoratorAdder(p,tool);
+					p.setTimeOfRental(rentalTime);//otherwise we get zeroes propagated
 				}
 				toolsRentedSoFar++;//we successfully added a tool
 			}
