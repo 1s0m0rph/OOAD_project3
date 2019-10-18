@@ -52,6 +52,7 @@ public class Store implements Observer
 			}
 		}
 
+		dailyRevenue += ((Purchasable) data).getCost();
 		RentalRecord rr = new RentalRecord((Customer) subject, toolsRented, timeRentedAt, timeRentedFor);
 		rentalRecords.add(rr);
 	}
@@ -82,6 +83,8 @@ public class Store implements Observer
 	public void incrementDay()
 	{
 		currentTime++;
+		totalRevenue += dailyRevenue;
+		dailyRevenue = 0;
 		// we can't remove while we iterate, so get indexes to remove
 		ArrayList<Integer> removeIdxs = new ArrayList<>(rentalRecords.size());
 		for(int i = 0; i < rentalRecords.size(); i++)
@@ -100,7 +103,11 @@ public class Store implements Observer
 			rentalRecords.remove(i);
 		}
 	}
-	
+
+	public int getDailyRevenue()
+	{
+		return dailyRevenue;
+	}
 	public int getTotalRevenue()
 	{
 		return totalRevenue;
