@@ -100,4 +100,9 @@ public class Store implements Observer
 			rentalRecords.remove(i);
 		}
 	}
+	
+	public int getTotalRevenue()
+	{
+		return totalRevenue;
+	}
 }
