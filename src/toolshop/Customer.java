@@ -105,7 +105,7 @@ public abstract class Customer extends Observable
 		{
 			Purchasable tool = null;
 			// get a valid tool category
-			while (tool == null);
+			while (tool == null)
 			{
 				int catidx = rand.nextInt(possibleToolCats.size());
 				tool = (Tool) tsi.get(possibleToolCats.get(catidx));
@@ -139,6 +139,7 @@ public abstract class Customer extends Observable
 						throw new IllegalArgumentException("randint doesn't work how I think it does. This should never happen.");
 				}
 			}
+			tools.add(tool);
 		}
 
 		toolsRented = tools.size();

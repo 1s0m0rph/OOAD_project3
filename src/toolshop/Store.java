@@ -40,7 +40,10 @@ public class Store implements Observer
 		int timeRentedAt = currentTime;
 
 		// we can just pass the list of tools rented directly to the rental record
-		dailyRevenue += ((Purchasable) data).getCost();
+		for (Purchasable p : toolsRented)
+		{
+			dailyRevenue += p.getCost();
+		}
 		RentalRecord rr = new RentalRecord((Customer) subject, toolsRented, timeRentedAt, timeRentedFor);
 		rentalRecords.add(rr);
 	}
