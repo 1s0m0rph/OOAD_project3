@@ -79,6 +79,7 @@ public class Store implements Observer
 		currentTime++;
 		totalRevenue += dailyRevenue;
 		dailyRevenue = 0;
+
 		ArrayList<RentalRecord> completedRentals = new ArrayList<>();
 		// iterate backwards so that we can remove records
 		for(int i = rentalRecords.size()-1; i >= 0; i--)
@@ -93,17 +94,6 @@ public class Store implements Observer
 			}
 		}
 		return completedRentals;
-	}
-
-	public ArrayList<RentalRecord> getRentalsForDate(int day)
-	{
-		ArrayList<RentalRecord> dailyRecords = new ArrayList<>();
-		for (RentalRecord rr : rentalRecords)
-		{
-			if (rr.dayRented == day)
-				dailyRecords.add(rr);
-		}
-		return dailyRecords;
 	}
 
 	public int getDailyRevenue()
