@@ -10,6 +10,8 @@ public class Store implements Observer
 	private ToolShopInventory inventory = ToolShopInventory.getInstance();
 	private static Store ourInstance = new Store();
 	private int currentTime = 0;//may want to move this
+	private int dailyRevenue = 0;
+	private int totalRevenue = 0;
 	
 	public static Store getInstance()
 	{
@@ -49,7 +51,7 @@ public class Store implements Observer
 				toolsRented.add(((ToolDecoratorAdder) opt).tool);
 			}
 		}
-		
+
 		RentalRecord rr = new RentalRecord((Customer) subject, toolsRented, timeRentedAt, timeRentedFor);
 		rentalRecords.add(rr);
 	}
