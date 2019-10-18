@@ -7,16 +7,27 @@ import java.util.*;
 public abstract class Customer extends Observable
 {
 	private String name;
-	
-	
+	private int toolsRented;
+
 	public Customer(String name)
 	{
 		this.name = name;
 		addObserver(Store.getInstance());//right off the bat we want to add the store as an observer
 	}
-	
+
+	public String getName() { return name; }
+
 	public abstract int getNumToolsToRent();
 	public abstract int getRentalTime();
+
+	public void returnTools(int numReturned)
+	{
+		toolsRented -= numReturned;
+		if (toolsRented < 0)
+		{
+			throw new IllegalStateException("Customer has negative tools");
+		}
+	}
 	
 	/*
 	Pick some tools to rent and an amount of time to rent them for, and add in the extras
@@ -25,6 +36,15 @@ public abstract class Customer extends Observable
 	 */
 	public void rentTools()
 	{
+		if (toolsRented > 3)
+		{
+			System.err.printf("Something went wrong! %s has more than 3 tools rented!\n", name);
+			return;
+		} else if (toolsRented == 3)
+		{
+			// can't rent more than 3 tools
+			return;
+		}
 		Random rand = new Random();
 		int numToolsToRent = getNumToolsToRent();
 		int rentalTime = getRentalTime();
@@ -53,16 +73,17 @@ public abstract class Customer extends Observable
 				//set the rental time variables now
 				tool.setTimeOfRental(rentalTime);//this will need to be reset when the tool is returned
 				//add this to the purchase
-				//if(p == null)
-				//{
-				//	//add it by assignment
-				//	p = tool;
-				//}
-				//else
-				//{
-				//	//add it by decorator construction
-				//	p = new ToolDecoratorAdder(p,tool)
-				//}
+				if(p == null)
+				{
+					//add it by assignment
+					p = tool;
+				}
+				else
+				{
+					//add it by decorator construction
+					p = new ToolDecoratorAdder(p,tool);
+					p.setTimeOfRental(rentalTime);//otherwise we get zeroes propagated
+				}
 				toolsRentedSoFar++;//we successfully added a tool
 				p = tool;
 			}
@@ -92,7 +113,8 @@ public abstract class Customer extends Observable
 			accessory.setTimeOfRental(rentalTime);//set the rental time even for the accessory objects to make our lives easier later on
 			p = accessory;
 		}
-		
+
+		toolsRented = toolsRentedSoFar;
 		//now we have the purchaseable and because of how we handled it, the items have been removed from the inventory
 		//notify the store of the purchase
 		setChanged();//java weirdness requires this

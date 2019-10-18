@@ -18,7 +18,22 @@ public class RentalRecord<T extends Purchasable>
 		this.toolsRented = toolsRented;
 		this.dayRented = dayRented;
 		this.totalRentalTime = totalRentalTime;
-		
+
 		dayDue = dayRented + totalRentalTime;
+	}
+
+	public void returnTools()
+	{
+		renter.returnTools(toolsRented.size());
+		ToolShopInventory tsi = ToolShopInventory.getInstance();
+		for (Tool t : toolsRented)
+		{
+			tsi.release(t);
+		}
+	}
+
+	public int getDueDate()
+	{
+		return dayDue;
 	}
 }
