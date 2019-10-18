@@ -33,25 +33,13 @@ public class Store implements Observer
 	 */
 	public void update(Observable subject, Object data)
 	{
-		ArrayList<Purchasable> options = ((Purchasable) data).getOptions();
-		
-		//we have the data, now let's make a rental record out of it
-		ArrayList<Tool> toolsRented = new ArrayList<>();
-		int timeRentedFor = ((Purchasable) data).timeOfRental;//guaranteed because of how customer makes the purchase
+		// cast data to an ArrayList of Purchasables
+		ArrayList<Purchasable> toolsRented = (ArrayList<Purchasable>) data;
+		// get the rental period from the first object
+		int timeRentedFor = toolsRented.get(0).getTimeOfRental();//guaranteed because of how customer makes the purchase
 		int timeRentedAt = currentTime;
-		
-		//add all the tools rented into the list
-		for(Purchasable opt : options)
-		{
-			if(opt instanceof Tool)
-			{
-				toolsRented.add((Tool) opt);
-			} else if(opt instanceof ToolDecoratorAdder)//we'll need this for the later ones
-			{
-				toolsRented.add(((ToolDecoratorAdder) opt).tool);
-			}
-		}
 
+		// we can just pass the list of tools rented directly to the rental record
 		RentalRecord rr = new RentalRecord((Customer) subject, toolsRented, timeRentedAt, timeRentedFor);
 		rentalRecords.add(rr);
 	}
@@ -63,7 +51,7 @@ public class Store implements Observer
 	
 	public void returnTools(RentalRecord record)
 	{
-		for(Tool tool : record.toolsRented)
+		for(Purchasable tool : record.toolsRented)
 		{
 			inventory.release(tool);
 		}

@@ -12,18 +12,28 @@ public abstract class PurchaseDecorator extends Purchasable
 	{
 		super();
 		this.purchasable = purchasable;
-		
+	}
+
+	public Tool getTool()
+	{
+		return purchasable.getTool();
 	}
 	
 	public ArrayList<Purchasable> getOptions()
 	{
-		ArrayList<Purchasable> retOpts = (ArrayList<Purchasable>) purchasable.getOptions().clone();
-		retOpts.add(this);
-		return retOpts;
+		// recursively generate options list
+		ArrayList<Purchasable> optionsList = purchasable.getOptions();
+		optionsList.add(this);
+		return optionsList;
 	}
 
 	public int getCost()
 	{
 		return purchasable.getCost();
+	}
+
+	public int getTimeOfRental()
+	{
+		return purchasable.getTimeOfRental();
 	}
 }
