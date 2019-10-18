@@ -7,7 +7,7 @@ import java.util.*;
 public abstract class Customer extends Observable
 {
 	private String name;
-	private int toolsRented;
+	protected int toolsRented;
 
 	public Customer(String name)
 	{
@@ -30,6 +30,42 @@ public abstract class Customer extends Observable
 	}
 	
 	/*
+	Adding a method allows us to create a test customer that is completely deterministic
+	 */
+	protected int getToolCategoryIndexToRentFromValid(int maxCategory)
+	{
+		Random rand = new Random();
+		return rand.nextInt(maxCategory);
+	}
+	
+	/*
+	Adding a method allows us to create a test customer that is completely deterministic
+	 */
+	protected int getNumOptionsToAdd()
+	{
+		Random rand = new Random();
+		return rand.nextInt(6);
+	}
+	
+	/*
+	Adding a method allows us to create a test customer that is completely deterministic
+	 */
+	protected int getOptionIdxToAdd()
+	{
+		Random rand = new Random();
+		return rand.nextInt(3);
+	}
+	
+	/*
+	A customer can't rent a number of tools that would put their current count above 3, and if the store has fewer than the customer might prefer, they have to rent fewer
+	 */
+	protected int getMaxToolsRentable()
+	{
+		ToolShopInventory tsi = ToolShopInventory.getInstance();
+		return Math.min(tsi.getNumToolsCurrentlyInInventory(),3 - toolsRented);
+	}
+	
+	/*
 	Pick some tools to rent and an amount of time to rent them for, and add in the extras
 	
 	notify the store of the purchase using observer
@@ -46,7 +82,9 @@ public abstract class Customer extends Observable
 			return;
 		}
 		Random rand = new Random();
-		int numToolsToRent = getNumToolsToRent();
+		int numToolsToRent = Math.min(getNumToolsToRent(),getMaxToolsRentable());//don't rent more than the max, but if what we want is too much we can always just rent not as much
+		if(numToolsToRent == 0)
+			return;//we don't even show up to the store
 		int rentalTime = getRentalTime();
 		ToolShopInventory tsi = ToolShopInventory.getInstance();
 		
@@ -60,8 +98,8 @@ public abstract class Customer extends Observable
 		ArrayList<String> possibleToolCats = new ArrayList(Arrays.asList(tsi.getCategoryCountsCurrent().keySet().toArray()));//is this a safe conversion?
 		while(toolsRentedSoFar < numToolsToRent)
 		{
-			//pick a random category
-			int catidx = rand.nextInt(possibleToolCats.size());
+			//pick a (possibly random) category
+			int catidx = getToolCategoryIndexToRentFromValid(possibleToolCats.size());
 			Tool tool = (Tool) tsi.get(possibleToolCats.get(catidx));
 			if(tool == null)
 			{
@@ -89,11 +127,11 @@ public abstract class Customer extends Observable
 		}
 		
 		//now we have all the tools in the purchasable object, let's add the options
-		int numOptionsToAdd = rand.nextInt(6);
+		int numOptionsToAdd = getNumOptionsToAdd();
 		for(int i = 0; i < numOptionsToAdd; i++)
 		{
-			//pick a random option to add
-			int ri = rand.nextInt(3);
+			//pick an option to add
+			int ri = getOptionIdxToAdd();
 			PurchaseDecorator accessory = null;
 			switch(ri)
 			{
