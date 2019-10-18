@@ -14,11 +14,8 @@ public abstract class Purchasable
 	
 	public abstract int getCost();
 	
-	public ArrayList<Purchasable> getOptions()
-	{
-		return options;
-	}
-	
+	abstract public ArrayList<Purchasable> getOptions();
+
 	public int getTimeOfRental()
 	{
 		return timeOfRental;

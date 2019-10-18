@@ -26,7 +26,7 @@ public class RentalRecord<T extends Purchasable>
 	{
 		renter.returnTools(toolsRented.size());
 		ToolShopInventory tsi = ToolShopInventory.getInstance();
-		for (Tool t : toolsRented)
+		for (Purchasable t : toolsRented)
 		{
 			tsi.release(t);
 		}
