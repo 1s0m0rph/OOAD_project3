@@ -19,6 +19,15 @@ public abstract class Customer extends Observable
 
 	public abstract int getNumToolsToRent();
 	public abstract int getRentalTime();
+
+	public void returnTools(int numReturned)
+	{
+		toolsRented -= numReturned;
+		if (toolsRented < 0)
+		{
+			throw new IllegalStateException("Customer has negative tools");
+		}
+	}
 	
 	/*
 	Pick some tools to rent and an amount of time to rent them for, and add in the extras
@@ -30,6 +39,7 @@ public abstract class Customer extends Observable
 		if (toolsRented > 3)
 		{
 			System.err.printf("Something went wrong! %s has more than 3 tools rented!\n", name);
+			return;
 		} else if (toolsRented == 3)
 		{
 			// can't rent more than 3 tools
@@ -102,7 +112,8 @@ public abstract class Customer extends Observable
 			accessory.setTimeOfRental(rentalTime);//set the rental time even for the accessory objects to make our lives easier later on
 			p = accessory;
 		}
-		
+
+		toolsRented = toolsRentedSoFar;
 		//now we have the purchaseable and because of how we handled it, the items have been removed from the inventory
 		//notify the store of the purchase
 		setChanged();//java weirdness requires this

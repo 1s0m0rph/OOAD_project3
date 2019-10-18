@@ -28,7 +28,8 @@ class StoreTest
 		assert(s.getRentalRecords().get(0).dayDue == 7);
 		assert(s.getRentalRecords().get(0).toolsRented.size() == 3);
 		assert(s.getRentalRecords().get(0).renter == customer);
-		s.returnTools(s.getRentalRecords().get(0));//technically unorthodog but it makes the second test here make more sense
+		//s.returnTools(s.getRentalRecords().get(0));//technically unorthodog but it makes the second test here make more sense
+		s.getRentalRecords().get(0).returnTools();
 		s.getRentalRecords().remove(0);
 	}
 	

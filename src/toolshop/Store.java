@@ -66,7 +66,7 @@ public class Store implements Observer
 			inventory.release(tool);
 		}
 	}
-	
+
 	public int getCurrentDay()
 	{
 		return currentTime;
@@ -88,7 +88,7 @@ public class Store implements Observer
 			if(record.getDueDate() == currentTime)
 			{
 				// return tools, in so doing remove the record from the rentalRecords
-				returnTools(record);
+				record.returnTools();
 				removeIdxs.add(i);
 			}
 		}

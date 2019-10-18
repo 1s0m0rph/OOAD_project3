@@ -37,7 +37,8 @@ public class CustomerPool implements ObjectPool
 	public void shuffle()
 	{
 		Random r = new Random();
-		Customer[] customerArray = (Customer[]) customers.toArray();
+		Customer[] customerArray = new Customer[12];
+		customerArray = customers.toArray(customerArray);
 		for (int i=0; i < customers.size(); i++)
 		{
 			int randIdx = r.nextInt(customerArray.length);

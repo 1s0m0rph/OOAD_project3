@@ -22,6 +22,16 @@ public class RentalRecord
 		dayDue = dayRented + totalRentalTime;
 	}
 
+	public void returnTools()
+	{
+		renter.returnTools(toolsRented.size());
+		ToolShopInventory tsi = ToolShopInventory.getInstance();
+		for (Tool t : toolsRented)
+		{
+			tsi.release(t);
+		}
+	}
+
 	public int getDueDate()
 	{
 		return dayDue;
