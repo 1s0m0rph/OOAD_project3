@@ -58,9 +58,39 @@ public class Store implements Observer
 	{
 		return rentalRecords;
 	}
+
+	public void returnTools(RentalRecord record)
+	{
+	    for (Tool tool : record.toolsRented) {
+	    	inventory.release(tool);
+		}
+	}
+
+	public int getCurrentDay() {
+	    return currentTime;
+	}
+
+	public int getCurrentInventoryCount() {
+		return inventory.getNumToolsCurrentlyInInventory();
+	}
 	
 	public void incrementDay()
 	{
 		currentTime++;
+		// we can't remove while we iterate, so get indexes to remove
+		ArrayList<Integer> expiredRentals = new ArrayList<>();
+		for (int i=0; i<rentalRecords.size(); i++)
+		{
+			RentalRecord record = rentalRecords.get(i);
+			if (record.getDueDate() == currentTime)
+			{
+				// return tools and mark records for destruction
+				returnTools(record);
+				expiredRentals.add(i);
+			}
+		}
+
+		// delete the records that have expired
+		for (int i : expiredRentals) { rentalRecords.remove(i); }
 	}
 }

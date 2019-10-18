@@ -21,4 +21,8 @@ public class RentalRecord
 		
 		dayDue = dayRented + totalRentalTime;
 	}
+
+	public int getDueDate() {
+		return dayDue;
+	}
 }

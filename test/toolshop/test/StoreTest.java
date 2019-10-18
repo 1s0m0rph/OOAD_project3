@@ -24,4 +24,20 @@ class StoreTest
 		assert(s.getRentalRecords().get(0).toolsRented.size() <= 3);
 		assert(s.getRentalRecords().get(0).renter == customer);
 	}
+
+	@Test
+	void returnTools()
+	{
+		RegularCustomer customer = new RegularCustomer("Dave");
+		customer.rentTools();
+		assert(s.getRentalRecords().size() == 1);
+		assert(s.getCurrentInventoryCount() == 23);
+		RentalRecord record = s.getRentalRecords().get(0);
+		int dayDue = record.getDueDate();
+		for (int i=s.getCurrentDay(); i<dayDue; i++) {
+		    s.incrementDay();
+		}
+		assert(s.getRentalRecords().size() == 0);
+		assert (s.getCurrentInventoryCount() == 24);
+	}
 }

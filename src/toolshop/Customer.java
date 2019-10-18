@@ -14,6 +14,8 @@ public abstract class Customer extends Observable
 		this.name = name;
 		addObserver(Store.getInstance());//right off the bat we want to add the store as an observer
 	}
+
+	public String getName() { return name; }
 	
 	public abstract int getNumToolsToRent();
 	public abstract int getRentalTime();
