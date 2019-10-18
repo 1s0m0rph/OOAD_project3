@@ -40,7 +40,11 @@ public class Main
 			{
 				System.out.println(rr);
 			}
+
+			// print inventory
+			System.out.println(ToolShopInventory.getInstance());
 			System.out.printf("$%d in revenue today\n", store.getDailyRevenue());
+			System.out.println("========");
 		}
 	}
 }

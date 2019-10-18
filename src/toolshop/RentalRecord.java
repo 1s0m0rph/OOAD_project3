@@ -39,7 +39,7 @@ public class RentalRecord
 
 	public String toString()
 	{
-		String retString  = "========\n";
+		String retString  = "";
 		retString += renter.getName() + "\n";
 		retString += toolsRented.size()+ " tools rented for "+ totalRentalTime +" days on "+ dayRented +"\n";
 		int cost = 0;
@@ -60,7 +60,6 @@ public class RentalRecord
 			}
 		}
 		retString += "Total: $" + cost + "\n";
-		retString += "=========";
 		return retString;
 	}
 }

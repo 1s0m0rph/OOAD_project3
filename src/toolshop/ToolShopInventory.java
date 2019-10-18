@@ -120,4 +120,14 @@ public class ToolShopInventory implements ObjectPool
 	{
 		return categoryCountsCurrent;
 	}
+
+	public String toString()
+	{
+		String retString = "INVENTORY\n";
+		for (String cat : inventory.keySet())
+		{
+			retString += cat + ": " + inventory.get(cat).size() + "\n";
+		}
+		return retString;
+	}
 }
