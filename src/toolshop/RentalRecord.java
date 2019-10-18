@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class RentalRecord
 {
-	public Customer renter;
-	public ArrayList<Purchasable> toolsRented;
-	public int dayRented;
-	public int totalRentalTime;
-	public int dayDue;
+	private Customer renter;
+	private ArrayList<Purchasable> toolsRented;
+	private int dayRented;
+	private int totalRentalTime;
+	private int dayDue;
 	
 	public RentalRecord(Customer renter, ArrayList<Purchasable> toolsRented, int dayRented, int totalRentalTime)
 	{
@@ -30,6 +30,26 @@ public class RentalRecord
 		{
 			tsi.release(t);
 		}
+	}
+
+	public Customer getRenter()
+	{
+		return renter;
+	}
+
+	public ArrayList<Purchasable> getToolsRented()
+	{
+		return toolsRented;
+	}
+
+	public int getDayRented()
+	{
+		return dayRented;
+	}
+
+	public int getTotalRentalTime()
+	{
+		return totalRentalTime;
 	}
 
 	public int getDueDate()

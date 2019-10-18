@@ -63,7 +63,7 @@ public class Store implements Observer
 	
 	public void returnTools(RentalRecord record)
 	{
-		for(Purchasable tool : record.toolsRented)
+		for(Purchasable tool : record.getToolsRented())
 		{
 			inventory.release(tool);
 		}
@@ -95,7 +95,7 @@ public class Store implements Observer
 			{
 				// return tools, in so doing remove the record from the rentalRecords
 				record.returnTools();
-				String customerType = record.renter.getType();
+				String customerType = record.getRenter().getType();
 				rentalCountByCustomerType.put(customerType, rentalCountByCustomerType.get(customerType) + 1);
 				completedRentals.add(record);
 				rentalRecords.remove(i);
