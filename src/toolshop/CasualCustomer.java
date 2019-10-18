@@ -6,7 +6,12 @@ public class CasualCustomer extends Customer
 	{
 		super(name);
 	}
-	
+
+	@Override
+	public String getType() {
+		return "casual";
+	}
+
 	@Override
 	public int getNumToolsToRent()
 	{

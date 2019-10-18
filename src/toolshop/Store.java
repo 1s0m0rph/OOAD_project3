@@ -2,13 +2,16 @@ package toolshop;
 
 import javax.print.attribute.standard.RequestingUserName;
 import java.lang.reflect.Array;
+import java.nio.channels.ScatteringByteChannel;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
 
 public class Store implements Observer
 {
 	private ArrayList<RentalRecord> rentalRecords;
+	private HashMap<String, Integer> rentalCountByCustomerType = new HashMap<>(3);
 	private ToolShopInventory inventory = ToolShopInventory.getInstance();
 	private static Store ourInstance = new Store();
 	private int currentTime = 0;//may want to move this
@@ -23,6 +26,9 @@ public class Store implements Observer
 	private Store()
 	{
 		rentalRecords = new ArrayList<>(24);//we won't ever have more than this
+		rentalCountByCustomerType.put("business", 0);
+		rentalCountByCustomerType.put("casual", 0);
+		rentalCountByCustomerType.put("regular", 0);
 	}
 	
 	/*
@@ -89,6 +95,8 @@ public class Store implements Observer
 			{
 				// return tools, in so doing remove the record from the rentalRecords
 				record.returnTools();
+				String customerType = record.renter.getType();
+				rentalCountByCustomerType.put(customerType, rentalCountByCustomerType.get(customerType) + 1);
 				completedRentals.add(record);
 				rentalRecords.remove(i);
 			}
@@ -103,5 +111,18 @@ public class Store implements Observer
 	public int getTotalRevenue()
 	{
 		return totalRevenue;
+	}
+
+	public int getRentalsForType(String type)
+	{
+		return rentalCountByCustomerType.get(type);
+	}
+
+	public int getTotalRentals()
+	{
+		int count = 0;
+		for (String type : rentalCountByCustomerType.keySet())
+			count += rentalCountByCustomerType.get(type);
+		return count;
 	}
 }

@@ -47,6 +47,13 @@ public class Main
 			System.out.println("========");
 		}
 
-		System.out.println("\nTotal Revenue: $" + store.getTotalRevenue());
+		System.out.println("\n");
+		System.out.println("Total Rentals: " + store.getTotalRentals());
+		String[] customerTypes = {"business", "casual", "regular"};
+		for (String type : customerTypes)
+		{
+			System.out.println(type +" rentals: " + store.getRentalsForType(type));
+		}
+		System.out.println("Total Revenue: $" + store.getTotalRevenue());
 	}
 }

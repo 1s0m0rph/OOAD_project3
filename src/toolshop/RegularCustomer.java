@@ -8,7 +8,12 @@ public class RegularCustomer extends Customer
 	{
 		super(name);
 	}
-	
+
+	@Override
+	public String getType() {
+		return "regular";
+	}
+
 	@Override
 	public int getNumToolsToRent()
 	{

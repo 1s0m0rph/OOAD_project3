@@ -18,6 +18,7 @@ public abstract class Customer extends Observable
 
 	public String getName() { return name; }
 
+	public abstract String getType();
 	public abstract int getNumToolsToRent();
 	public abstract int getRentalTime();
 

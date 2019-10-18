@@ -9,7 +9,12 @@ public class DeterministicCustomer extends Customer
 	{
 		super(name);
 	}
-	
+
+	@Override
+	public String getType() {
+		return "deterministic";
+	}
+
 	@Override
 	public int getNumToolsToRent()
 	{
