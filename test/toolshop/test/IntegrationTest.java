@@ -6,7 +6,7 @@ import toolshop.*;
 class IntegrationTest {
 
     @Test
-    void returns()
+    void customerReturns()
     {
         Store s = Store.getInstance();
         Customer alice = new RegularCustomer("Alice");
@@ -20,5 +20,12 @@ class IntegrationTest {
         for (int i=0; i<8; i++) { s.incrementDay(); }
         assert(s.getCurrentInventoryCount() == 24);
         assert(s.getRentalRecords().size() == 0);
+    }
+
+    @Test
+    void customerPool()
+    {
+        Store s = Store.getInstance();
+
     }
 }

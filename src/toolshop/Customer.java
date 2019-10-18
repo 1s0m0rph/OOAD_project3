@@ -7,8 +7,8 @@ import java.util.*;
 public abstract class Customer extends Observable
 {
 	private String name;
-	
-	
+	private int toolsRented;
+
 	public Customer(String name)
 	{
 		this.name = name;
@@ -16,7 +16,7 @@ public abstract class Customer extends Observable
 	}
 
 	public String getName() { return name; }
-	
+
 	public abstract int getNumToolsToRent();
 	public abstract int getRentalTime();
 	
@@ -27,6 +27,14 @@ public abstract class Customer extends Observable
 	 */
 	public void rentTools()
 	{
+		if (toolsRented > 3)
+		{
+			System.err.printf("Something went wrong! %s has more than 3 tools rented!\n", name);
+		} else if (toolsRented == 3)
+		{
+			// can't rent more than 3 tools
+			return;
+		}
 		Random rand = new Random();
 		int numToolsToRent = getNumToolsToRent();
 		int rentalTime = getRentalTime();

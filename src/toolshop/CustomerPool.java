@@ -1,11 +1,10 @@
 package toolshop;
 
-import java.util.LinkedList;//for customer queue
-import java.util.HashMap;
+import java.util.*;
 
 public class CustomerPool implements ObjectPool
 {
-	private HashMap<String,Customer> customers = new HashMap<>();
+	private ArrayDeque<Customer> customers = new ArrayDeque<>(12);
 	private static boolean isShutdown;
 	
 	private static CustomerPool ourInstance = new CustomerPool();
@@ -19,35 +18,39 @@ public class CustomerPool implements ObjectPool
 	{
 	    isShutdown = false;
 		// 6 casual customers
-	    customers.put("Alice", new CasualCustomer("Alice"));
-	    customers.put("Bob", new CasualCustomer("Bob"));
-	    customers.put("Chuck", new CasualCustomer("Chuck"));
-	    customers.put("Dave", new CasualCustomer("Dave"));
-		customers.put("Erin", new CasualCustomer("Erin"));
-		customers.put("Fiona", new CasualCustomer("Fiona"));
+	    customers.add(new CasualCustomer("Alice"));
+	    customers.add(new CasualCustomer("Bob"));
+	    customers.add(new CasualCustomer("Chuck"));
+	    customers.add(new CasualCustomer("Dave"));
+		customers.add(new CasualCustomer("Erin"));
+		customers.add(new CasualCustomer("Fiona"));
 		// 4 regular customers
-		customers.put("Gary", new RegularCustomer("Gary"));
-		customers.put("Hannah", new RegularCustomer("Hannah"));
-		customers.put("Ian", new RegularCustomer("Ian"));
-		customers.put("Janet", new RegularCustomer("Janet"));
+		customers.add(new RegularCustomer("Gary"));
+		customers.add( new RegularCustomer("Hannah"));
+		customers.add(new RegularCustomer("Ian"));
+		customers.add(new RegularCustomer("Janet"));
 		// 2 business customers
-		customers.put("Karen", new BusinessCustomer("Karen"));
-		customers.put("Lewis", new BusinessCustomer("Lewis"));
+		customers.add(new BusinessCustomer("Karen"));
+		customers.add(new BusinessCustomer("Lewis"));
 	}
 
-	@Override
-	public Object get(String type)
+	public void shuffle()
 	{
-		if (isShutdown)
-			throw new IllegalArgumentException("CustomerPool has been shut down.");
-		if (customers.containsKey(type) && customers.get(type) != null)
+		Random r = new Random();
+		Customer[] customerArray = (Customer[]) customers.toArray();
+		for (int i=0; i < customers.size(); i++)
 		{
-			return customers.replace(type, null);
+			int randIdx = r.nextInt(customerArray.length);
+			Customer tmp = customerArray[i];
+			customerArray[i] = customerArray[randIdx];
+			customerArray[randIdx] = tmp;
 		}
-		else
-		{
-			return null;
-		}
+		customers = new ArrayDeque<>(Arrays.asList(customerArray));
+	}
+
+	public int poolCount()
+	{
+		return customers.size();
 	}
 
 	@Override
@@ -55,14 +58,13 @@ public class CustomerPool implements ObjectPool
 	{
 		if (isShutdown)
 			throw new IllegalArgumentException("CustomerPool has been shut down.");
-	    for (String k : customers.keySet())
+		try
 		{
-		    if (customers.get(k) != null)
-			{
-				return customers.replace(k, null);
-			}
+			return customers.pop();
+		} catch (NoSuchElementException e)
+		{
+			return null;
 		}
-	    return null;
 	}
 
 	@Override
@@ -71,15 +73,7 @@ public class CustomerPool implements ObjectPool
 		if (isShutdown)
 			throw new IllegalArgumentException("CustomerPool has been shut down.");
 		Customer c = (Customer) obj;
-		String name = c.getName();
-	    if (customers.containsKey(name) && customers.get(name) == null)
-	    {
-	    	customers.put(name, c);
-		} else
-		{
-	    	// this should never happen
-			throw new IllegalArgumentException("Something went wrong: could not add a customer");
-		}
+		customers.push((Customer) obj);
 	}
 
 	@Override
@@ -87,9 +81,9 @@ public class CustomerPool implements ObjectPool
 	{
 		if (isShutdown)
 			throw new IllegalArgumentException("CustomerPool has been shut down.");
-		for (String k : customers.keySet())
+		while (!customers.isEmpty())
 		{
-			customers.remove(customers.get(k));
+			customers.pop();
 		}
 		isShutdown = true;
 	}

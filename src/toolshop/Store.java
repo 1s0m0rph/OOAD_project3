@@ -65,7 +65,6 @@ public class Store implements Observer
 		{
 			inventory.release(tool);
 		}
-		rentalRecords.remove(record);
 	}
 	
 	public int getCurrentDay()
@@ -82,6 +81,7 @@ public class Store implements Observer
 	{
 		currentTime++;
 		// we can't remove while we iterate, so get indexes to remove
+		ArrayList<Integer> removeIdxs = new ArrayList<>(rentalRecords.size());
 		for(int i = 0; i < rentalRecords.size(); i++)
 		{
 			RentalRecord record = rentalRecords.get(i);
@@ -89,7 +89,13 @@ public class Store implements Observer
 			{
 				// return tools, in so doing remove the record from the rentalRecords
 				returnTools(record);
+				removeIdxs.add(i);
 			}
+		}
+
+		for (int i : removeIdxs)
+		{
+			rentalRecords.remove(i);
 		}
 	}
 }

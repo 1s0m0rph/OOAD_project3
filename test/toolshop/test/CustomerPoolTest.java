@@ -24,19 +24,7 @@ class CustomerPoolTest
 	
 	@Test
 	@Order(2)
-	void getNamed()
-	{
-		CustomerPool customers = CustomerPool.getInstance();
-		String name = "Alice";
-		Customer alice = (Customer) customers.get("Alice");
-		assert (alice.getName().equals("Alice"));
-		assert (customers.get("Alice") == null);
-		customers.release(alice);
-	}
-	
-	@Test
-	@Order(3)
-	void getNext()
+	void get()
 	{
 		CustomerPool customers = CustomerPool.getInstance();
 		ArrayList<Customer> inStore = new ArrayList<>();
@@ -54,21 +42,27 @@ class CustomerPoolTest
 	}
 	
 	@Test
-	@Order(4)
+	@Order(3)
 	void release()
 	{
 		CustomerPool customers = CustomerPool.getInstance();
-		Customer bob = (Customer) customers.get("Bob");
-		assert (customers.get("Bob") == null);
-		customers.release(bob);
-		bob = null;
-		bob = (Customer) customers.get("Bob");
-		assert (bob.getName().equals("Bob"));
-		customers.release(bob);
+		ArrayList<Customer> inStore = new ArrayList<>();
+		Customer next = (Customer) customers.get();
+		while(next != null)
+		{
+			inStore.add(next);
+			next = (Customer) customers.get();
+		}
+		assert(customers.poolCount() == 0);
+		for(Customer c : inStore)
+		{
+			customers.release(c);
+		}
+		assert(customers.poolCount() == 12);
 	}
 	
 	@Test
-	@Order(5)
+	@Order(4)
 	void shutdown()
 	{
 		if(System.getenv("DO_SHUTDOWN_TESTS").equalsIgnoreCase("false"))
