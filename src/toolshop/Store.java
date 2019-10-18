@@ -75,6 +75,7 @@ public class Store implements Observer
 	
 	public ArrayList<RentalRecord> incrementDay()
 	{
+		CustomerPool.getInstance().shuffle();
 		currentTime++;
 		totalRevenue += dailyRevenue;
 		dailyRevenue = 0;

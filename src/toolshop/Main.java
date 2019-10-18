@@ -46,5 +46,7 @@ public class Main
 			System.out.printf("$%d in revenue today\n", store.getDailyRevenue());
 			System.out.println("========");
 		}
+
+		System.out.println("\nTotal Revenue: $" + store.getTotalRevenue());
 	}
 }
