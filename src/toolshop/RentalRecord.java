@@ -59,9 +59,9 @@ public class RentalRecord
 
 	public String toString()
 	{
-		String retString  = "";
-		retString += renter.getName() + "\n";
-		retString += toolsRented.size()+ " tools rented for "+ totalRentalTime +" days on "+ dayRented +"\n";
+		StringBuilder retString  = new StringBuilder();
+		retString.append(renter.getName()).append("\n");
+		retString.append(toolsRented.size()).append(" tool").append((toolsRented.size() == 1) ? "" : "s").append(" rented for ").append(totalRentalTime).append(" days on day ").append(dayRented).append("\n");
 		int cost = 0;
 		for (int i=0; i < toolsRented.size(); i++)
 		{
@@ -69,17 +69,17 @@ public class RentalRecord
 			cost += p.getCost();
 			ArrayList<PurchaseDecorator> options = p.getOptions();
 			Tool tool = p.getTool();
-			retString += (i+1) +": "+ tool.getCategory().getCategoryName() +" tool with: ";
+			retString.append(tool.getCategory().getCategoryName()).append(" tool with: ");
 			for (int j=0; j < options.size(); j++)
 			{
-				retString += options.get(j).getType();
+				retString.append(options.get(j).getType());
 				if (j != options.size()-1)
-					retString += ", ";
+					retString.append(", ");
 				else
-					retString += "\n";
+					retString.append("\n");
 			}
 		}
-		retString += "Total: $" + cost + "\n";
-		return retString;
+		retString.append("Total: $").append(cost).append("\n");
+		return retString.toString();
 	}
 }

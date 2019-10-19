@@ -34,7 +34,7 @@ class StoreTest
 		assert(rr.getToolsRented().get(2).getTool().getCategory().getCategoryName().equalsIgnoreCase("yardwork"));//all these guaranteed bc of deterministic customer
 		rr.returnTools();
 		s.getRentalRecords().remove(0);
-		assert(s.getDailyRevenue() == 339);//this order should *always* cost 323 for 3 days
+		assert(s.getDailyRevenue() == 339);//this order should *always* cost 339 for 3 days
 	}
 	
 	@Test
