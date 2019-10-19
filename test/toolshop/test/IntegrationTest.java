@@ -47,6 +47,7 @@ class IntegrationTest {
 			{
 				customers.release(c);
 			}
+			dailyCustomers.clear();
 		}
 	}
 }
