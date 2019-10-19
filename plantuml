@@ -153,16 +153,27 @@ abstract class PurchaseDecorator
 Purchasable <|-down- PurchaseDecorator
 
 class ExtensionCord
+{
+    +int getCost()
+    +String getType()
+}
 class AccessoryKit
+{
+    +int getCost()
+    +String getType()
+}
 class ProtectiveGearPackage
+{
+    +int getCost()
+    +String getType()
+}
 
 PurchaseDecorator <|-down- ExtensionCord
 PurchaseDecorator <|-down- AccessoryKit
 PurchaseDecorator <|-down- ProtectiveGearPackage
-PurchaseDecorator <|-down- ToolDecoratorAdder
 
 
-PurchaseDecorator --> Purchasable: component
+PurchaseDecorator --> "1" Purchasable
 
 abstract class Customer
 {
@@ -238,6 +249,8 @@ class CustomerPool
     +release(Customer)
     +shutdown()
 }
+
+CustomerPool --* "12" Customer
 
 class Main
 {
