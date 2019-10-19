@@ -12,11 +12,20 @@ abstract class ObjectPool <<interface>>
 
 class ToolshopInventory
 {
-    -List[Tool] inventory
-    -ToolshopInventory()
+    -Map[String, List[Tool]] inventory
+    -int numToolsCurrentlyInInventory
+    -{static}ToolShopInventory instance
+    -{static}bool isShutdown
+    -{static}Map[String, int] getInitialToolCounts
+    -Map[String, int] categoryCountsCurrent
+    -ToolshopInventory(Map[String, int])
     +{static} ToolshopInventory getInstance()
-    +Tool checkoutTool()
-    +returnTool(Tool)
+    +Tool get()
+    +release(Tool)
+    +shutdown()
+    +int getNumToolsCurrentlyInInventory()
+    +Map[String, int] getCategoryCountsCurrent()
+    +String toString()
 }
 Tool "24" -right-o ToolshopInventory
 
@@ -27,21 +36,43 @@ class RentalRecord
 {
     -Customer renter
     -List[Purchasable] toolsRented
+    -int dayRented
+    -int totalRentalTime
+    -int dayDue
     +RentalRecord()
-    +List[Purchasable] getTools()
+    +returnTools()
+    +Customer getRenter()
+    +List[Purchasable] getToolsRented()
+    +int getDayRented()
+    +int getTotalRentalTime()
+    +int getDueDate()
+    +String toString()
 }
 
 Store "1" *-- "*" RentalRecord
 RentalRecord "1" o-- "1" Customer
+RentalRecord o-- "*" Tool
 
 class Store
 {
-    -{static} Store instance
-    -Store()
-    -ToolshopInventory inventory
     -List[RentalRecord] rentalRecords
+    -Map[String, int] rentalCountByCustomerType
+    -ToolshopInventory inventory
+    -{static} Store instance
+    -int currentTime
+    -int dailyRevenue
+    -int totalRevenue
+    -Store()
     +{static} Store getInstance()
-    + update()
+    + update(Observable, List[Purchasable])
+    +List[RentalRecord] getRentalRecords()
+    +int getCurrentDay()
+    +int getCurrentInventoryCount()
+    +List[RentalRecord] incrementDay()
+    +int getDailyRevenue()
+    +int getTotalRevenue()
+    +int getRentalsForType(String)
+    +int getTotalRentals()
 }
 
 Store "1" *-- "1" ToolshopInventory
@@ -50,17 +81,22 @@ Store "1" *-- "1" ToolshopInventory
 
 class Tool
 {
-    #ToolCategory cat
-    +Tool()
-    +setCategory(ToolCategory)
-    +int getPrice()
+    #{static}int TOOL_BASE_PRICE
+    -ToolCategory category
+    +Tool(ToolCategory)
+    +getCategory()
+    +int getCost()
+    +Tool getTool()
+    +List[PurchaseDecorator] getOptions()
 }
 
 abstract class ToolCategory
 {
-    #int basePrice
-    +ToolCategory(int)
-    +int getBasePrice()
+    -String category
+    -int cost
+    +ToolCategory(String, int)
+    +getCategoryName()
+    +int getPrice()
 }
 
 Tool -right- "1" ToolCategory: strategy
@@ -94,16 +130,24 @@ ToolCategory <|-down- Yardwork
 
 abstract class Purchasable
 {
-    -List[Purchaseable] options
-    +int getCost()
-
+    #int timeOfRental
+    +{abstract} int getCost()
+    +{abstract} Tool getTool()
+    +{abstract} List[PurchaseDecorator] getOptions()
+    +int getTimeOfRental()
+    +setTimeOfRental()
 }
 
 Purchasable <|-down- Tool
 
 abstract class PurchaseDecorator
 {
-    +int getPrice()
+    +Purchasable purchasable
+    +Tool getTool()
+    +List[PurchaseDecorator] getOptions()
+    +int getCost()
+    +int getTimeOfRental()
+    +{abstract} String getType()
 }
 
 Purchasable <|-down- PurchaseDecorator
@@ -112,28 +156,51 @@ class ExtensionCord
 class AccessoryKit
 class ProtectiveGearPackage
 
-class ToolDecoratorAdder
-{
-    - Tool tool
-}
-
 PurchaseDecorator <|-down- ExtensionCord
 PurchaseDecorator <|-down- AccessoryKit
 PurchaseDecorator <|-down- ProtectiveGearPackage
 PurchaseDecorator <|-down- ToolDecoratorAdder
 
-ToolDecoratorAdder --> "1" Tool
 
-PurchaseDecorator -- Purchasable: component
+PurchaseDecorator --> Purchasable: component
 
 abstract class Customer
 {
-    #String name
-    +{abstract} rentTools()
+    -String name
+    #int toolsRented
+    +Customer(String)
+    +String getName()
+    +{abstract}String getType()
+    +{abstract}int getNumToolsToRent()
+    +{abstract}int getRentalTime()
+    +returnTools(int)
+    #int getToolCategoryIndexToRentFromValid(int)
+    #int getNumOptionsToAdd()
+    #int getOptionIdxToAdd()
+    #int getMaxToolsRentable()
+    +rentTools()
 }
 class CasualCustomer
+{
+    +CasualCustomer(String)
+    +String getType()
+    +int getNumToolsToRent()
+    +int getRentalTime()
+}
 class BusinessCustomer
+{
+    +CasualCustomer(String)
+    +String getType()
+    +int getNumToolsToRent()
+    +int getRentalTime()
+}
 class RegularCustomer
+{
+    +CasualCustomer(String)
+    +String getType()
+    +int getNumToolsToRent()
+    +int getRentalTime()
+}
 
 Customer <|-down- CasualCustomer
 Customer <|-down- BusinessCustomer
@@ -160,12 +227,16 @@ Observable --> "*" Observer: observers
 
 class CustomerPool
 {
-    - CustomerPool()
-    + getInstance()
-
-    - List[Customer] customers
-    + getCustomerToMakePurchase()
-    + getCustomerToReturnItems()
+    -Queue[Customer] customers
+    -{static}bool isShutdown
+    -{static}CustomerPool instance
+    -CustomerPool()
+    +{static}CustomerPool getInstance()
+    +shuffle()
+    +int poolCount()
+    +Customer get()
+    +release(Customer)
+    +shutdown()
 }
 
 class Main
@@ -173,13 +244,9 @@ class Main
     + main()
 }
 
-CustomerPool o-- "12" Customer
-Main -- "1" CustomerPool
-Main --> Customer
-
 class SimpleToolFactory
 {
-    + createTool()
+    + createTool(String)
 }
 
 ToolshopInventory --> "1" SimpleToolFactory
