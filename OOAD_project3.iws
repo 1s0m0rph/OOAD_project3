@@ -264,8 +264,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="658" />
+    <option name="y" value="-13" />
     <option name="width" value="1452" />
     <option name="height" value="763" />
   </component>
@@ -318,7 +318,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571447448359" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571447650788" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -360,20 +360,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RegularCustomerTest">
-    <configuration name="RegularCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="toolshop.Main" />
       <module name="project3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="toolshop.test.*" />
+          <option name="PATTERN" value="toolshop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="toolshop.test" />
-      <option name="MAIN_CLASS_NAME" value="toolshop.test.RegularCustomerTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <dir value="$PROJECT_DIR$/src" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -472,18 +468,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.Run All Tests" />
-      <item itemvalue="JUnit.RegularCustomerTest" />
       <item itemvalue="JUnit.SimpleToolFactoryTest" />
       <item itemvalue="JUnit.StoreTest" />
       <item itemvalue="JUnit.ToolShopInventoryTest" />
       <item itemvalue="JUnit.ToolTest" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RegularCustomerTest" />
-        <item itemvalue="JUnit.StoreTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ToolTest" />
         <item itemvalue="JUnit.ToolShopInventoryTest" />
+        <item itemvalue="JUnit.StoreTest" />
         <item itemvalue="JUnit.SimpleToolFactoryTest" />
       </list>
     </recent_temporary>
