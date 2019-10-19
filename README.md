@@ -50,3 +50,8 @@ The general design of this program is best understood from the UML diagram (see 
   - The store.
 - Simple Factory
   - The SimpleToolFactory allows us to create tools of different categories by simply passing in a string with which category we wish to create.
+
+
+## UML
+
+![Class Diagram](class_diagram.png)
