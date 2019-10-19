@@ -11,7 +11,7 @@ public class AccessoryKit extends PurchaseDecorator
 	{
 		return purchasable.getCost() + 5;
 	}
-
+	
 	public String getType()
 	{
 		return "Accessory Kit";

@@ -1,6 +1,5 @@
 package toolshop;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Set;
@@ -11,27 +10,27 @@ Object pool for the inventory of the tool shop
  */
 public class ToolShopInventory implements ObjectPool
 {
-	private HashMap<String,LinkedList<Tool>> inventory;//we want to seperate the tools by type and index by a type string
+	private HashMap<String, LinkedList<Tool>> inventory;//we want to seperate the tools by type and index by a type string
 	private int numToolsCurrentlyInInventory;
 	private static ToolShopInventory instance = new ToolShopInventory(getInitialToolCounts());
 	private static boolean isShutdown = false;
-	private HashMap<String,Integer> categoryCountsCurrent;
+	private HashMap<String, Integer> categoryCountsCurrent;
 	
-	private static HashMap<String,Integer> getInitialToolCounts()
+	private static HashMap<String, Integer> getInitialToolCounts()
 	{
-		HashMap<String,Integer> init = new HashMap<>();
-		init.put("concrete",1);
-		init.put("painting",8);
-		init.put("plumbing",5);
-		init.put("woodwork",6);
-		init.put("yardwork",4);
+		HashMap<String, Integer> init = new HashMap<>();
+		init.put("concrete", 1);
+		init.put("painting", 8);
+		init.put("plumbing", 5);
+		init.put("woodwork", 6);
+		init.put("yardwork", 4);
 		return init;
 	}
 	
 	/*
 	Start by knowing how many of each type of tool there is
 	 */
-	private ToolShopInventory(HashMap<String,Integer> toolCounts)
+	private ToolShopInventory(HashMap<String, Integer> toolCounts)
 	{
 		inventory = new HashMap<>();
 		
@@ -76,7 +75,7 @@ public class ToolShopInventory implements ObjectPool
 		{
 			ret = inventory.get(type).removeFirst();//get the first tool in the queue of the correct type
 			numToolsCurrentlyInInventory--;
-			categoryCountsCurrent.put(type,categoryCountsCurrent.get(type) - 1);//update this category's count
+			categoryCountsCurrent.put(type, categoryCountsCurrent.get(type) - 1);//update this category's count
 		}
 		return ret;
 	}
@@ -91,7 +90,7 @@ public class ToolShopInventory implements ObjectPool
 		tool.setTimeOfRental(0);
 		inventory.get(type).add(tool);
 		numToolsCurrentlyInInventory++;
-		categoryCountsCurrent.put(type,categoryCountsCurrent.get(type) + 1);//update this category's count
+		categoryCountsCurrent.put(type, categoryCountsCurrent.get(type) + 1);//update this category's count
 	}
 	
 	@Override
@@ -120,14 +119,14 @@ public class ToolShopInventory implements ObjectPool
 	{
 		return categoryCountsCurrent;
 	}
-
+	
 	public String toString()
 	{
-		String retString = "INVENTORY\n";
-		for (String cat : inventory.keySet())
+		StringBuilder retString = new StringBuilder("INVENTORY\n");
+		for(String cat : inventory.keySet())
 		{
-			retString += cat + ": " + inventory.get(cat).size() + "\n";
+			retString.append(cat).append(": ").append(inventory.get(cat).size()).append("\n");
 		}
-		return retString;
+		return retString.toString();
 	}
 }

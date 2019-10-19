@@ -3,9 +3,32 @@
   <component name="ChangeListManager">
     <list default="true" id="9154bfbb-818c-4437-bae1-1b3d1741439d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/OOAD_project3.iws" beforeDir="false" afterPath="$PROJECT_DIR$/OOAD_project3.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/toolshop/ToolDecoratorAdder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/toolshop/test/CustomerPoolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/toolshop/test/CustomerPoolTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/AccessoryKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/AccessoryKit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/BusinessCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/BusinessCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/CasualCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/CasualCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Concrete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Concrete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/CustomerPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/CustomerPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/ExtensionCord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/ExtensionCord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Painting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Painting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Plumbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Plumbing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/ProtectiveGearPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/ProtectiveGearPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Purchasable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Purchasable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/PurchaseDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/PurchaseDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/RegularCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/RegularCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/RentalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/RentalRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/SimpleToolFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/SimpleToolFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Tool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Tool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/ToolShopInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/ToolShopInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Woodwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Woodwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toolshop/Yardwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/toolshop/Yardwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/toolshop/test/DeterministicCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/toolshop/test/DeterministicCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/toolshop/test/SimpleToolFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/toolshop/test/SimpleToolFactoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/toolshop/test/StoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/toolshop/test/StoreTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/toolshop/test/ToolTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/toolshop/test/ToolTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,7 +54,7 @@
         <counts>
           <entry key="class" value="5" />
           <entry key="groovy" value="1" />
-          <entry key="java" value="167" />
+          <entry key="java" value="235" />
           <entry key="md" value="1" />
           <entry key="plantuml" value="4" />
         </counts>
@@ -40,19 +63,19 @@
         <counts>
           <entry key="CLASS" value="5" />
           <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="167" />
+          <entry key="JAVA" value="235" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="14549" />
+          <entry key="java" value="14617" />
           <entry key="md" value="270" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14549" />
+          <entry key="JAVA" value="14617" />
           <entry key="Markdown" value="58" />
           <entry key="PLAIN_TEXT" value="212" />
         </counts>
@@ -61,6 +84,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/toolshop/ProtectiveGearPackage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#138#139#0" expanded="true" />
+                <element signature="e#163#164#0" expanded="true" />
+                <element signature="e#229#230#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/toolshop/SimpleToolFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/toolshop/Store.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/toolshop/Tool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/toolshop/ToolCategory.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,84 +137,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/toolshop/Tool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-              <folding>
-                <element signature="e#290#291#0" expanded="true" />
-                <element signature="e#312#313#0" expanded="true" />
-                <element signature="e#339#340#0" expanded="true" />
-                <element signature="e#407#408#0" expanded="true" />
-                <element signature="e#434#435#0" expanded="true" />
-                <element signature="e#452#453#0" expanded="true" />
-                <element signature="e#668#669#0" expanded="true" />
-                <element signature="e#716#717#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/toolshop/test/ToolTest.java">
+        <entry file="file://$PROJECT_DIR$/src/toolshop/ToolShopInventory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/toolshop/Customer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/toolshop/test/CustomerPoolTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="67" selection-start-line="67" selection-end-line="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/toolshop/CustomerPool.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/toolshop/test/SimpleToolFactoryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="387">
+              <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -158,14 +149,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/toolshop/Purchasable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="e#275#276#0" expanded="true" />
-                <element signature="e#301#302#0" expanded="true" />
-                <element signature="e#353#354#0" expanded="true" />
-                <element signature="e#392#393#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/toolshop/PurchaseDecorator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/toolshop/RegularCustomer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/toolshop/RentalRecord.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -197,11 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/ObjectFactory.java" />
-        <option value="$PROJECT_DIR$/src/ToolFactory.java" />
-        <option value="$PROJECT_DIR$/src/ObjectPool.java" />
-        <option value="$PROJECT_DIR$/src/ToolShopInventoryTest.groovy" />
         <option value="$PROJECT_DIR$/src/Concrete.java" />
         <option value="$PROJECT_DIR$/src/Plumbing.java" />
         <option value="$PROJECT_DIR$/src/Painting.java" />
@@ -232,26 +239,31 @@
         <option value="$PROJECT_DIR$/src/CasualCustomerTest.java" />
         <option value="$PROJECT_DIR$/src/StoreTest.java" />
         <option value="$PROJECT_DIR$/src/ToolShopInventoryTest.java" />
-        <option value="$PROJECT_DIR$/src/toolshop/Tool.java" />
         <option value="$PROJECT_DIR$/test/toolshoptest/test/ToolShopInventoryTest.java" />
-        <option value="$PROJECT_DIR$/src/toolshop/ToolShopInventory.java" />
         <option value="$PROJECT_DIR$/src/toolshop/BusinessCustomer.java" />
         <option value="$PROJECT_DIR$/src/toolshop/RegularCustomer.java" />
-        <option value="$PROJECT_DIR$/src/toolshop/Customer.java" />
         <option value="$PROJECT_DIR$/test/toolshop/test/DeterministicCustomer.java" />
         <option value="$PROJECT_DIR$/src/toolshop/Store.java" />
-        <option value="$PROJECT_DIR$/test/toolshop/test/StoreTest.java" />
-        <option value="$PROJECT_DIR$/src/toolshop/RentalRecord.java" />
         <option value="$PROJECT_DIR$/test/toolshop/SimpleToolFactoryTest.java" />
-        <option value="$PROJECT_DIR$/test/toolshop/test/IntegrationTest.java" />
-        <option value="$PROJECT_DIR$/test/toolshop/test/CustomerPoolTest.java" />
-        <option value="$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java" />
         <option value="$PROJECT_DIR$/test/toolshop/ToolTest.java" />
+        <option value="$PROJECT_DIR$/test/toolshop/test/CasualCustomerTest.java" />
+        <option value="$PROJECT_DIR$/test/toolshop/test/CustomerPoolTest.java" />
+        <option value="$PROJECT_DIR$/test/toolshop/test/IntegrationTest.java" />
+        <option value="$PROJECT_DIR$/test/toolshop/test/RegularCustomerTest.java" />
+        <option value="$PROJECT_DIR$/test/toolshop/test/SimpleToolFactoryTest.java" />
+        <option value="$PROJECT_DIR$/test/toolshop/test/StoreTest.java" />
+        <option value="$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java" />
         <option value="$PROJECT_DIR$/test/toolshop/test/ToolTest.java" />
+        <option value="$PROJECT_DIR$/src/toolshop/RentalRecord.java" />
+        <option value="$PROJECT_DIR$/src/toolshop/SimpleToolFactory.java" />
+        <option value="$PROJECT_DIR$/src/toolshop/Tool.java" />
+        <option value="$PROJECT_DIR$/src/toolshop/ToolShopInventory.java" />
+        <option value="$PROJECT_DIR$/src/toolshop/Customer.java" />
+        <option value="$PROJECT_DIR$/src/toolshop/CustomerPool.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1452" />
@@ -306,7 +318,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571446816974" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571447448359" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -348,7 +360,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ToolTest">
+  <component name="RunManager" selected="JUnit.RegularCustomerTest">
     <configuration name="RegularCustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project3" />
       <extension name="coverage">
@@ -468,11 +480,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RegularCustomerTest" />
+        <item itemvalue="JUnit.StoreTest" />
         <item itemvalue="JUnit.ToolTest" />
         <item itemvalue="JUnit.ToolShopInventoryTest" />
-        <item itemvalue="JUnit.StoreTest" />
         <item itemvalue="JUnit.SimpleToolFactoryTest" />
-        <item itemvalue="JUnit.RegularCustomerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -490,35 +502,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CustomerPoolTest - 2019.10.18 at 18h 41m 58s.xml">
-      <configuration name="CustomerPoolTest" configurationId="JUnit" />
+    <history-entry file="IntegrationTest - 2019.10.18 at 18h 59m 46s.xml">
+      <configuration name="IntegrationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomerPoolTest - 2019.10.18 at 18h 42m 04s.xml">
-      <configuration name="CustomerPoolTest" configurationId="JUnit" />
+    <history-entry file="IntegrationTest - 2019.10.18 at 18h 59m 58s.xml">
+      <configuration name="IntegrationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="CustomerPoolTest - 2019.10.18 at 18h 42m 48s.xml">
-      <configuration name="CustomerPoolTest" configurationId="JUnit" />
+    <history-entry file="RegularCustomerTest - 2019.10.18 at 19h 00m 07s.xml">
+      <configuration name="RegularCustomerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Run_All_Tests - 2019.10.18 at 18h 42m 53s.xml">
-      <configuration name="Run All Tests" configurationId="JUnit" />
+    <history-entry file="SimpleToolFactoryTest - 2019.10.18 at 19h 00m 09s.xml">
+      <configuration name="SimpleToolFactoryTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Run_All_Tests - 2019.10.18 at 18h 44m 55s.xml">
-      <configuration name="Run All Tests" configurationId="JUnit" />
+    <history-entry file="StoreTest - 2019.10.18 at 19h 00m 12s.xml">
+      <configuration name="StoreTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ToolTest - 2019.10.18 at 18h 53m 21s.xml">
+    <history-entry file="ToolShopInventoryTest - 2019.10.18 at 19h 00m 15s.xml">
+      <configuration name="ToolShopInventoryTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ToolTest - 2019.10.18 at 19h 00m 17s.xml">
       <configuration name="ToolTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ToolTest - 2019.10.18 at 18h 53m 56s.xml">
-      <configuration name="ToolTest" configurationId="JUnit" />
+    <history-entry file="StoreTest - 2019.10.18 at 19h 07m 55s.xml">
+      <configuration name="StoreTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ToolTest - 2019.10.18 at 18h 54m 58s.xml">
-      <configuration name="ToolTest" configurationId="JUnit" />
+    <history-entry file="RegularCustomerTest - 2019.10.18 at 19h 09m 34s.xml">
+      <configuration name="RegularCustomerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ToolTest - 2019.10.18 at 18h 55m 10s.xml">
-      <configuration name="ToolTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ToolTest - 2019.10.18 at 18h 55m 17s.xml">
-      <configuration name="ToolTest" configurationId="JUnit" />
+    <history-entry file="RegularCustomerTest - 2019.10.18 at 19h 10m 37s.xml">
+      <configuration name="RegularCustomerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -531,7 +543,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
+    <frame x="-8" y="-8" width="2576" height="1456" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49962825" visible="true" weight="0.19952305" />
@@ -561,37 +573,21 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.3296875" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49962825" visible="true" weight="0.1899841" />
-      <window_info id="Structure" order="1" sideWeight="0.50037175" side_tool="true" weight="0.24960938" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32879817" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32879817" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.23197027" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32955405" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32955405" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.3227513" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" weight="0.32955405" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32879817" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3296875" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/toolshop/test/IntegrationTest.java</url>
+          <line>37</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
@@ -622,13 +618,6 @@
     <entry file="file://$PROJECT_DIR$/src/Observable.java" />
     <entry file="file://$PROJECT_DIR$/src/ObjectFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/ToolShopInventoryTest.groovy" />
-    <entry file="file://$PROJECT_DIR$/src/toolshop/ObjectPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Purchase.java" />
     <entry file="file://$PROJECT_DIR$/plantuml">
       <provider selected="true" editor-type-id="text-editor">
@@ -639,221 +628,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CustomerTest.java" />
     <entry file="file://$PROJECT_DIR$/src/toolshop/RegularCustomerTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/toolshop/PurchaseDecorator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/CasualCustomer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/ToolShopInventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/Observable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="158" selection-start-line="158" selection-end-line="158" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Painting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Woodwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Plumbing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/ExtensionCord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/RegularCustomer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/DeterministicCustomer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Yardwork.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/BusinessCustomer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/CasualCustomerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/RegularCustomerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Concrete.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Store.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="76" column="41" lean-forward="true" selection-start-line="76" selection-start-column="41" selection-end-line="76" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/RentalRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-          <folding>
-            <element signature="e#767#768#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#895#896#0" expanded="true" />
-            <element signature="e#918#919#0" expanded="true" />
-            <element signature="e#955#956#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-            <element signature="e#1013#1014#0" expanded="true" />
-            <element signature="e#1033#1034#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/StoreTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/AccessoryKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#211#212#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/IntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/ProtectiveGearPackage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#138#139#0" expanded="true" />
-            <element signature="e#163#164#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/SimpleToolFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/CustomerPoolTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/CustomerPool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/SimpleToolFactoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -874,6 +652,261 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/CasualCustomerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/CustomerPoolTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="69" column="40" lean-forward="true" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/DeterministicCustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="13" lean-forward="true" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/IntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/RegularCustomerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="35" column="58" lean-forward="true" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/SimpleToolFactoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/StoreTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="40" column="4" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/ToolShopInventoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="53" column="64" lean-forward="true" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/toolshop/test/ToolTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Woodwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Yardwork.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding>
+            <element signature="e#112#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/AccessoryKit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="e#172#173#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/BusinessCustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/CasualCustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Concrete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding>
+            <element signature="e#84#85#0" expanded="true" />
+            <element signature="e#112#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-282">
+          <caret line="84" column="43" lean-forward="true" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/CustomerPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/ExtensionCord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="e#122#123#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#213#214#0" expanded="true" />
+            <element signature="e#243#244#0" expanded="true" />
+            <element signature="e#273#274#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/ObjectPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Painting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Plumbing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/ProtectiveGearPackage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#138#139#0" expanded="true" />
+            <element signature="e#163#164#0" expanded="true" />
+            <element signature="e#229#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Purchasable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/PurchaseDecorator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/RegularCustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/RentalRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/SimpleToolFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Store.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="41" column="54" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/toolshop/Tool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/toolshop/ToolCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -884,50 +917,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Tool.java">
+    <entry file="file://$PROJECT_DIR$/src/toolshop/ToolShopInventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
-          <folding>
-            <element signature="e#290#291#0" expanded="true" />
-            <element signature="e#312#313#0" expanded="true" />
-            <element signature="e#339#340#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#434#435#0" expanded="true" />
-            <element signature="e#452#453#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/toolshop/Purchasable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#301#302#0" expanded="true" />
-            <element signature="e#353#354#0" expanded="true" />
-            <element signature="e#392#393#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/toolshop/test/ToolTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="387">
+          <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
         </state>
       </provider>
     </entry>

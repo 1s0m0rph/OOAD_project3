@@ -1,14 +1,10 @@
 package toolshop;
 
-import toolshop.Concrete;
-import toolshop.Painting;
-import toolshop.Plumbing;
-
 public class SimpleToolFactory
 {
 	public Tool createTool(String type)
 	{
-		Tool ret = null;
+		Tool ret;
 		if(type.equalsIgnoreCase("concrete"))
 			ret = new Tool(new Concrete());
 		else if(type.equalsIgnoreCase("painting"))

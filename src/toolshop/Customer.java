@@ -1,31 +1,33 @@
 package toolshop;
 
-import toolshop.AccessoryKit;
-
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Observable;
+import java.util.Random;
 
 public abstract class Customer extends Observable
 {
 	private String name;
 	protected int toolsRented;
-
+	
 	public Customer(String name)
 	{
 		this.name = name;
 		addObserver(Store.getInstance());//right off the bat we want to add the store as an observer
 	}
-
+	
 	public String getName() { return name; }
-
+	
 	public abstract String getType();
+	
 	public abstract int getNumToolsToRent();
+	
 	public abstract int getRentalTime();
-
+	
 	public void returnTools(int numReturned)
 	{
 		toolsRented -= numReturned;
-		if (toolsRented < 0)
+		if(toolsRented < 0)
 		{
 			throw new IllegalStateException("Customer has negative tools");
 		}
@@ -64,7 +66,7 @@ public abstract class Customer extends Observable
 	protected int getMaxToolsRentable()
 	{
 		ToolShopInventory tsi = ToolShopInventory.getInstance();
-		return Math.min(tsi.getNumToolsCurrentlyInInventory(),3 - toolsRented);
+		return Math.min(tsi.getNumToolsCurrentlyInInventory(), 3 - toolsRented);
 	}
 	
 	/*
@@ -74,19 +76,18 @@ public abstract class Customer extends Observable
 	 */
 	public void rentTools()
 	{
-		if (toolsRented > 3)
+		if(toolsRented > 3)
 		{
 			System.err.printf("Something went wrong! %s has more than 3 tools rented!\n", name);
 			return;
-		} else if (toolsRented == 3)
+		} else if(toolsRented == 3)
 		{
 			// can't rent more than 3 tools
 			return;
 		}
-
-		Random rand = new Random();
+		
 		// get customer preferences
-		int numToolsToRent = Math.min(getNumToolsToRent(),getMaxToolsRentable());//don't rent more than the max, but if what we want is too much we can always just rent not as much
+		int numToolsToRent = Math.min(getNumToolsToRent(), getMaxToolsRentable());//don't rent more than the max, but if what we want is too much we can always just rent not as much
 		if(numToolsToRent == 0)
 			return;//we don't even show up to the store
 		int rentalTime = getRentalTime();
@@ -95,18 +96,18 @@ public abstract class Customer extends Observable
 		//do a sanity check to make sure there are actually enough tools in the inventory
 		if(tsi.getNumToolsCurrentlyInInventory() < numToolsToRent)
 			return;//they don't have what the customer wants, so the customer just leaves
-
+		
 		// create an ArrayList to store the tools we need
 		ArrayList<Purchasable> tools = new ArrayList<>(numToolsToRent);
 		// get the available categories
 		ArrayList<String> possibleToolCats = new ArrayList(Arrays.asList(tsi.getCategoryCountsCurrent().keySet().toArray()));//is this a safe conversion?
-
+		
 		// rent each tool
-		for (int i=0; i < numToolsToRent; i++)
+		for(int i = 0; i < numToolsToRent; i++)
 		{
 			Purchasable tool = null;
 			// get a valid tool category
-			while (tool == null)
+			while(tool == null)
 			{
 				int catidx = getToolCategoryIndexToRentFromValid(possibleToolCats.size());
 				tool = (Tool) tsi.get(possibleToolCats.get(catidx));
@@ -118,7 +119,7 @@ public abstract class Customer extends Observable
 			}
 			//set the rental time variables now
 			tool.setTimeOfRental(rentalTime);//this will need to be reset when the tool is returned
-
+			
 			// add options to each tool
 			int numOptionsToAdd = getNumOptionsToAdd();
 			for(int j = 0; j < numOptionsToAdd; j++)
@@ -142,9 +143,9 @@ public abstract class Customer extends Observable
 			}
 			tools.add(tool);
 		}
-
+		
 		toolsRented += tools.size();
-		//now we have the purchaseable and because of how we handled it, the items have been removed from the inventory
+		//now we have the purchasable and because of how we handled it, the items have been removed from the inventory
 		//notify the store of the purchase
 		setChanged();//java weirdness requires this
 		notifyObservers(tools);//note that because of the java weirdness we don't need to explicitly tell the store who did the purchase; it's part of the observer implementation

@@ -1,20 +1,23 @@
 package toolshop.test;
-import toolshop.*;
+
+import toolshop.Customer;
 
 public class DeterministicCustomer extends Customer
 {
 	private int optionCount = 0;
 	private int toolCatCount = 0;
+	
 	public DeterministicCustomer(String name)
 	{
 		super(name);
 	}
-
+	
 	@Override
-	public String getType() {
+	public String getType()
+	{
 		return "deterministic";
 	}
-
+	
 	@Override
 	public int getNumToolsToRent()
 	{

@@ -4,7 +4,9 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
-import toolshop.*;
+import toolshop.BusinessCustomer;
+import toolshop.RentalRecord;
+import toolshop.Store;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class StoreTest

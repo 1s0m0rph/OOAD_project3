@@ -6,21 +6,22 @@ public class CasualCustomer extends Customer
 	{
 		super(name);
 	}
-
+	
 	@Override
-	public String getType() {
+	public String getType()
+	{
 		return "casual";
 	}
-
+	
 	@Override
 	public int getNumToolsToRent()
 	{
-		return (int)(Math.random() * 2) + 1;
+		return (int) (Math.random() * 2) + 1;
 	}
 	
 	@Override
 	public int getRentalTime()
 	{
-		return (int)(Math.random() * 2) + 1;
+		return (int) (Math.random() * 2) + 1;
 	}
 }

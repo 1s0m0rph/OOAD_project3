@@ -1,7 +1,5 @@
 package toolshop;
 
-import toolshop.Purchasable;
-
 import java.util.ArrayList;
 
 public abstract class PurchaseDecorator extends Purchasable
@@ -13,7 +11,7 @@ public abstract class PurchaseDecorator extends Purchasable
 		super();
 		this.purchasable = purchasable;
 	}
-
+	
 	public Tool getTool()
 	{
 		return purchasable.getTool();
@@ -26,16 +24,16 @@ public abstract class PurchaseDecorator extends Purchasable
 		optionsList.add(this);
 		return optionsList;
 	}
-
+	
 	public int getCost()
 	{
 		return purchasable.getCost();
 	}
-
+	
 	public int getTimeOfRental()
 	{
 		return purchasable.getTimeOfRental();
 	}
-
+	
 	public abstract String getType();
 }

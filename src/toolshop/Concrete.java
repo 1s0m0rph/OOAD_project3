@@ -4,6 +4,6 @@ public class Concrete extends ToolCategory
 {
 	public Concrete()
 	{
-		super("concrete",40);
+		super("concrete", 40);
 	}
 }

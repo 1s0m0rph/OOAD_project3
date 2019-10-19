@@ -11,7 +11,7 @@ public class ProtectiveGearPackage extends PurchaseDecorator
 	{
 		return purchasable.getCost() + 1;
 	}
-
+	
 	public String getType()
 	{
 		return "Protective Gear Package";

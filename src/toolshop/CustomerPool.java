@@ -1,6 +1,9 @@
 package toolshop;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+import java.util.Random;
 
 public class CustomerPool implements ObjectPool
 {
@@ -16,30 +19,30 @@ public class CustomerPool implements ObjectPool
 	
 	private CustomerPool()
 	{
-	    isShutdown = false;
+		isShutdown = false;
 		// 6 casual customers
-	    customers.add(new CasualCustomer("Alice"));
-	    customers.add(new CasualCustomer("Bob"));
-	    customers.add(new CasualCustomer("Chuck"));
-	    customers.add(new CasualCustomer("Dave"));
+		customers.add(new CasualCustomer("Alice"));
+		customers.add(new CasualCustomer("Bob"));
+		customers.add(new CasualCustomer("Chuck"));
+		customers.add(new CasualCustomer("Dave"));
 		customers.add(new CasualCustomer("Erin"));
 		customers.add(new CasualCustomer("Fiona"));
 		// 4 regular customers
 		customers.add(new RegularCustomer("Gary"));
-		customers.add( new RegularCustomer("Hannah"));
+		customers.add(new RegularCustomer("Hannah"));
 		customers.add(new RegularCustomer("Ian"));
 		customers.add(new RegularCustomer("Janet"));
 		// 2 business customers
 		customers.add(new BusinessCustomer("Karen"));
 		customers.add(new BusinessCustomer("Lewis"));
 	}
-
+	
 	public void shuffle()
 	{
 		Random r = new Random();
 		Customer[] customerArray = new Customer[12];
 		customerArray = customers.toArray(customerArray);
-		for (int i=0; i < customers.size(); i++)
+		for(int i = 0; i < customers.size(); i++)
 		{
 			int randIdx = r.nextInt(customerArray.length);
 			Customer tmp = customerArray[i];
@@ -48,41 +51,41 @@ public class CustomerPool implements ObjectPool
 		}
 		customers = new ArrayDeque<>(Arrays.asList(customerArray));
 	}
-
+	
 	public int poolCount()
 	{
 		return customers.size();
 	}
-
+	
 	@Override
 	public Object get()
 	{
-		if (isShutdown)
+		if(isShutdown)
 			throw new IllegalArgumentException("CustomerPool has been shut down.");
 		try
 		{
 			return customers.pop();
-		} catch (NoSuchElementException e)
+		}
+		catch(NoSuchElementException e)
 		{
 			return null;
 		}
 	}
-
+	
 	@Override
 	public void release(Object obj)
 	{
-		if (isShutdown)
+		if(isShutdown)
 			throw new IllegalArgumentException("CustomerPool has been shut down.");
-		Customer c = (Customer) obj;
 		customers.push((Customer) obj);
 	}
-
+	
 	@Override
 	public void shutdown()
 	{
-		if (isShutdown)
+		if(isShutdown)
 			throw new IllegalArgumentException("CustomerPool has been shut down.");
-		while (!customers.isEmpty())
+		while(!customers.isEmpty())
 		{
 			customers.pop();
 		}

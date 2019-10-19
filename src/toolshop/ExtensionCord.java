@@ -11,7 +11,7 @@ public class ExtensionCord extends PurchaseDecorator
 	{
 		return purchasable.getCost() + 2;
 	}
-
+	
 	public String getType()
 	{
 		return "Extension Cord";

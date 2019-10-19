@@ -1,8 +1,5 @@
 package toolshop;
 
-import javax.print.attribute.standard.RequestingUserName;
-import java.lang.reflect.Array;
-import java.nio.channels.ScatteringByteChannel;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Observable;
@@ -46,9 +43,9 @@ public class Store implements Observer
 		// get the rental period from the first object
 		int timeRentedFor = toolsRented.get(0).getTimeOfRental();//guaranteed because of how customer makes the purchase
 		int timeRentedAt = currentTime;
-
+		
 		// we can just pass the list of tools rented directly to the rental record
-		for (Purchasable p : toolsRented)
+		for(Purchasable p : toolsRented)
 		{
 			dailyRevenue += p.getCost();
 		}
@@ -68,7 +65,7 @@ public class Store implements Observer
 			inventory.release(tool);
 		}
 	}
-
+	
 	public int getCurrentDay()
 	{
 		return currentTime;
@@ -85,10 +82,10 @@ public class Store implements Observer
 		currentTime++;
 		totalRevenue += dailyRevenue;
 		dailyRevenue = 0;
-
+		
 		ArrayList<RentalRecord> completedRentals = new ArrayList<>();
 		// iterate backwards so that we can remove records
-		for(int i = rentalRecords.size()-1; i >= 0; i--)
+		for(int i = rentalRecords.size() - 1; i >= 0; i--)
 		{
 			RentalRecord record = rentalRecords.get(i);
 			if(record.getDueDate() == currentTime)
@@ -103,25 +100,26 @@ public class Store implements Observer
 		}
 		return completedRentals;
 	}
-
+	
 	public int getDailyRevenue()
 	{
 		return dailyRevenue;
 	}
+	
 	public int getTotalRevenue()
 	{
 		return totalRevenue;
 	}
-
+	
 	public int getRentalsForType(String type)
 	{
 		return rentalCountByCustomerType.get(type);
 	}
-
+	
 	public int getTotalRentals()
 	{
 		int count = 0;
-		for (String type : rentalCountByCustomerType.keySet())
+		for(String type : rentalCountByCustomerType.keySet())
 			count += rentalCountByCustomerType.get(type);
 		return count;
 	}

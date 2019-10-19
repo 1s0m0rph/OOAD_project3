@@ -1,8 +1,10 @@
 package toolshop.test;
+
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
-import toolshop.*;
+import toolshop.Tool;
+import toolshop.ToolShopInventory;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ToolShopInventoryTest

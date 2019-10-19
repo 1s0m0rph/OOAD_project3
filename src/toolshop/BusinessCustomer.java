@@ -6,12 +6,13 @@ public class BusinessCustomer extends Customer
 	{
 		super(name);
 	}
-
+	
 	@Override
-	public String getType() {
+	public String getType()
+	{
 		return "business";
 	}
-
+	
 	@Override
 	public int getNumToolsToRent()
 	{
